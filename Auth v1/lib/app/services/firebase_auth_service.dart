@@ -23,6 +23,7 @@ class FirebaseAuthService {
     );
   }
 
+// hi
   Stream<User> get onAuthStateChanged {
     return _firebaseAuth.onAuthStateChanged.map(_userFromFirebase);
   }
