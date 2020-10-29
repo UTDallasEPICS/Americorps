@@ -1,9 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import '../time/time_view.dart';
 import 'package:provider/provider.dart';
 import '../../../app/constants/strings.dart';
 import '../../../app/services/firebase_auth_service.dart';
-import '../../../app/models/user.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
@@ -16,17 +15,26 @@ class HomeView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                '\t\tHome Page \n Welcome to Americorps VISTA, ' +
-                    getUserName(),
+                '\t\tHome Page \n Welcome to Americorps VISTA',
                 style: Theme.of(context).textTheme.headline4,
               ),
             ),
             const Spacer(),
             RaisedButton(
               onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TimeView()),
+                );
+              },
+              child: const Text(Strings.time),
+            ),
+            const Spacer(),
+            RaisedButton(
+              onPressed: () {
                 context.read<FirebaseAuthService>().signOut();
               },
-              child: Text(Strings.signOut),
+              child: const Text(Strings.signOut),
             ),
             const Spacer(),
           ],
@@ -34,8 +42,4 @@ class HomeView extends StatelessWidget {
       ),
     );
   }
-}
-
-String getUserName() {
-  return 'Guest';
 }

@@ -6,6 +6,5 @@ class Strings {
   static const String signInMessage = 'Please sign in';
   static const String anonymousSignUp = 'Anonymous sign in';
   static const String signOut = 'Sign out';
-
-  // General
+  static const String time = 'View Time';
 }
