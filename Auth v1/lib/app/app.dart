@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
+      title: 'Login',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
@@ -25,3 +25,29 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+// STUFF I CANNOT FIGURE OUT AT ATM - JOHN
+// class Consumer<User> extends StatefulWidget {
+//   @override
+//   _HomePageState createState() => _HomePageState();
+// }
+
+// class _HomePageState extends State<Consumer<User>> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return LayoutBuilder(
+//       builder: (_, user, __) {
+//           if (user == null) {
+//             return const SignInView();
+//           } else {
+//             return const HomeView();
+//           }
+//         }
+  
+//   }
+//   @override
+//   Widget build(BuildContext context) {
+//     var screenSize = MediaQuery.of(context).size;
+//     return Scaffold();
+//   }
+// }

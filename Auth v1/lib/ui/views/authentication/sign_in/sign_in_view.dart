@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_web_firebase_googe_auth/ui/views/authentication/sign_in/background_painter.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/constants/strings.dart';
@@ -34,16 +35,27 @@ class SignInViewBody extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
+          
+          // This is for adding in a custom background
+          Center (    
+              child: CustomPaint (
+              painter: BackgroundPainter(),
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.all(16),
             child: Text(
-              Strings.signInMessage,
-              style: Theme.of(context).textTheme.headline4,
+              "Please Sign In Below.",
+              style: Theme.of(context).textTheme.headline4, 
+
             ),
           ),
+          
           Expanded(
             child: isLoading ? _loadingIndicator() : _signInButtons(context),
           ),
+          
         ],
       ),
     );
