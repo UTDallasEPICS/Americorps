@@ -30,33 +30,56 @@ class SignInViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final isLoading =
         context.select((SignInViewModel viewModel) => viewModel.isLoading);
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          
-          // This is for adding in a custom background
-          Center (    
-              child: CustomPaint (
-              painter: BackgroundPainter(),
+    return Scaffold(
+      backgroundColor: Colors.blue[50],
+      body: Padding(
+        padding:
+            EdgeInsets.only(top: 60.0, bottom: 60.0, left: 120.0, right: 120.0),
+        child: Card(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+          elevation: 5.0,
+          child: Container(
+            width: MediaQuery.of(context).size.width / 3.3,
+            height: MediaQuery.of(context).size.width / 3.3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: <Widget>[
+                // // This is for adding in a custom background
+                // Center(
+                //   child: CustomPaint(
+                //     painter: BackgroundPainter(),
+                //   ),
+                // ),
+
+                Padding(
+                  padding: const EdgeInsets.all(16), 
+                  child: Container (
+                  height: MediaQuery.of(context).size.height / 10,
+                  width: MediaQuery.of(context).size.width / 10,
+                  child: Image.network(
+                    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg/1200px-AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg.png',
+                  ),
+                  ),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    "Please Sign In Below.",
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                ),
+
+                Expanded(
+                  child:
+                      isLoading ? _loadingIndicator() : _signInButtons(context),
+                ),
+              ],
             ),
           ),
-
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Text(
-              "Please Sign In Below.",
-              style: Theme.of(context).textTheme.headline4, 
-
-            ),
-          ),
-          
-          Expanded(
-            child: isLoading ? _loadingIndicator() : _signInButtons(context),
-          ),
-          
-        ],
+        ),
       ),
     );
   }
