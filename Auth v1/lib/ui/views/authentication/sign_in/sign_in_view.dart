@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web_firebase_googe_auth/ui/views/authentication/sign_in/background_painter.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../app/constants/strings.dart';
@@ -30,55 +29,147 @@ class SignInViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final isLoading =
         context.select((SignInViewModel viewModel) => viewModel.isLoading);
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.blue[50],
-      body: Padding(
-        padding:
-            EdgeInsets.only(top: 60.0, bottom: 60.0, left: 120.0, right: 120.0),
-        child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-          elevation: 5.0,
-          child: Container(
-            width: MediaQuery.of(context).size.width / 3.3,
-            height: MediaQuery.of(context).size.width / 3.3,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.max,
-              children: <Widget>[
-                // // This is for adding in a custom background
-                // Center(
-                //   child: CustomPaint(
-                //     painter: BackgroundPainter(),
-                //   ),
-                // ),
-
-                Padding(
-                  padding: const EdgeInsets.all(16), 
-                  child: Container (
-                  height: MediaQuery.of(context).size.height / 10,
-                  width: MediaQuery.of(context).size.width / 10,
-                  child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg/1200px-AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg.png',
-                  ),
-                  ),
+      body: Container(
+        child: Stack(
+          children: [
+            // Half blue half white background
+            Row(
+              children: [
+                Container(
+                  height: double.infinity,
+                  width: size.width / 2,
+                  color: Colors.blue[200],
                 ),
-
-                Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
-                    "Please Sign In Below.",
-                    style: Theme.of(context).textTheme.headline4,
-                  ),
-                ),
-
-                Expanded(
-                  child:
-                      isLoading ? _loadingIndicator() : _signInButtons(context),
+                Container(
+                  height: double.infinity,
+                  width: size.width / 2,
+                  color: Colors.white,
                 ),
               ],
             ),
-          ),
+
+            // Copyright icon
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: EdgeInsets.all(32),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(
+                      Icons.copyright,
+                      color: Colors.grey,
+                      size: 28,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      "COPYRIGHT 2020",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            // Login Box
+            Center(
+              child: Card(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0)),
+                elevation: 5.0,
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 200),
+                  width: size.width / 3.3,
+                  height: size.height *
+                      (size.height > 770
+                          ? 0.7
+                          : size.height > 670
+                              ? 0.8
+                              : 0.8),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: Container(
+                          height: MediaQuery.of(context).size.height / 10,
+                          width: MediaQuery.of(context).size.width / 10,
+                          child: Image.network(
+                            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg/1200px-AmeriCorps_VISTA_%28Volunteers_in_Service_to_America%29_Logo.svg.png',
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(16),
+                        child: Text(
+                          "LOG IN",
+                          style: TextStyle(
+                            color: Colors.grey[500],
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Container(
+                        width: 30,
+                        child: Divider(
+                          color: Colors.grey,
+                          thickness: 2,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 00, 40, 10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Email',
+                            labelText: 'Email',
+                            suffixIcon: Icon(
+                              Icons.mail_outline,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Password',
+                            labelText: 'Password',
+                            suffixIcon: Icon(
+                              Icons.lock_outline,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: isLoading
+                            ? _loadingIndicator()
+                            : _signInButtons(context),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -95,6 +186,7 @@ class SignInViewBody extends StatelessWidget {
       children: <Widget>[
         const Spacer(),
         const AnonymousSignInButton(),
+        const Spacer(),
         const GoogleSignInButton(),
         const Spacer(),
       ],
