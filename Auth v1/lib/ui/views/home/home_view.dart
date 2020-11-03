@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import '../time/time_view.dart';
 import 'package:provider/provider.dart';
 import '../../../app/constants/strings.dart';
 import '../../../app/services/firebase_auth_service.dart';
+import 'package:flutter_web_firebase_googe_auth/size_config.dart';
 
 String name = '';
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -48,6 +50,7 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
+                      // CategoryCard(),
                       RaisedButton(
                         onPressed: () {
                           Navigator.push(
@@ -70,6 +73,43 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CategoryCard extends StatelessWidget {
+  const CategoryCard({
+    Key key,
+    @required this.icon,
+    @required this.text,
+    @required this.press,
+  }) : super(key: key);
+
+  final String icon, text;
+  final GestureTapCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: SizedBox(
+        width: getProportionateScreenWidth(55),
+        child: Column(
+          children: [
+            Container(
+              padding: EdgeInsets.all(getProportionateScreenWidth(15)),
+              height: getProportionateScreenWidth(55),
+              width: getProportionateScreenWidth(55),
+              decoration: BoxDecoration(
+                color: Color(0xFFFFECDF),
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+            SizedBox(height: 5),
+            Text(text, textAlign: TextAlign.center)
           ],
         ),
       ),
