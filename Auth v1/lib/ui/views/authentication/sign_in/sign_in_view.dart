@@ -5,6 +5,7 @@ import '../../../../app/constants/strings.dart';
 import 'sign_in_view_model.dart';
 import 'widgets/anonymous_sign_in_button.dart';
 import 'widgets/google_sign_in_button.dart';
+import 'package:passwordfield/passwordfield.dart';
 
 class SignInView extends StatelessWidget {
   const SignInView({Key key}) : super(key: key);
@@ -147,6 +148,21 @@ class SignInViewBody extends StatelessWidget {
                       SizedBox(
                         height: 15,
                       ),
+                      //////////////////////////////////////////////////////////////////////////
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
+                        child: PasswordField(
+                          hasFloatingPlaceholder: true,
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              borderSide: const BorderSide(
+                                  width: 2, color: Colors.blue)),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      ////////////////////////////////////////////////////////////////////////////
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextField(
