@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import '../../ui/views/authentication/sign_in/sign_in_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../models/user.dart';
@@ -12,6 +13,7 @@ class FirebaseAuthService {
         _googleSignIn = googleSignin ?? GoogleSignIn();
 
   User _userFromFirebase(FirebaseUser user) {
+    getCurrentUserName();
     if (user == null) {
       return null;
     }

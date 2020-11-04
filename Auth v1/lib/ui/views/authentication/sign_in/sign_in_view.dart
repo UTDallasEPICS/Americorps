@@ -1,15 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../app/constants/strings.dart';
 import 'sign_in_view_model.dart';
 import 'widgets/anonymous_sign_in_button.dart';
 import 'widgets/google_sign_in_button.dart';
-import 'package:passwordfield/passwordfield.dart';
 
-class SignInView extends StatelessWidget {
+String name = '';
+final FirebaseAuth _auth = FirebaseAuth.instance;
+void getCurrentUserName() async {
+  final user = await _auth.currentUser();
+  if (user.isAnonymous) {
+    name = 'Guest';
+  } else {
+    name = user.displayName;
+  }
+}
+
+class SignInView extends StatefulWidget {
   const SignInView({Key key}) : super(key: key);
 
+  @override
+  _SignInViewState createState() => _SignInViewState();
+}
+
+class _SignInViewState extends State<SignInView> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<SignInViewModel>(
@@ -23,9 +38,15 @@ class SignInView extends StatelessWidget {
   }
 }
 
-class SignInViewBody extends StatelessWidget {
+class SignInViewBody extends StatefulWidget {
   const SignInViewBody._({Key key}) : super(key: key);
 
+  @override
+  _SignInViewBodyState createState() => _SignInViewBodyState();
+}
+
+class _SignInViewBodyState extends State<SignInViewBody> {
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     final isLoading =
@@ -55,20 +76,20 @@ class SignInViewBody extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: Padding(
-                padding: EdgeInsets.all(32),
+                padding: const EdgeInsets.all(32),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.copyright,
                       color: Colors.grey,
                       size: 28,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 8,
                     ),
-                    Text(
-                      "COPYRIGHT 2020",
+                    const Text(
+                      'COPYRIGHT 2020',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 14,
@@ -87,7 +108,7 @@ class SignInViewBody extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30.0)),
                 elevation: 5.0,
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 200),
+                  duration: const Duration(milliseconds: 200),
                   width: size.width / 3.3,
                   height: size.height *
                       (size.height > 770
@@ -112,7 +133,7 @@ class SignInViewBody extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(16),
                         child: Text(
-                          "LOG IN",
+                          'LOG IN',
                           style: TextStyle(
                             color: Colors.grey[500],
                             fontSize: 20,
@@ -120,21 +141,21 @@ class SignInViewBody extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Container(
                         width: 30,
-                        child: Divider(
+                        child: const Divider(
                           color: Colors.grey,
                           thickness: 2,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 00, 40, 10),
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(40, 00, 40, 10),
                         child: TextField(
                           decoration: InputDecoration(
                             hintText: 'Email',
@@ -145,26 +166,39 @@ class SignInViewBody extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      //////////////////////////////////////////////////////////////////////////
+                      // //////////////////////////////////////////////////////////////////////////
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
-                        child: PasswordField(
-                          hasFloatingPlaceholder: true,
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              borderSide: const BorderSide(
-                                  width: 2, color: Colors.blue)),
-                        ),
+                        child: TextField(
+                            obscureText: !_showPassword,
+                            decoration: InputDecoration(
+                              labelText: 'Password',
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  _showPassword
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                ),
+                                onPressed: () {
+                                  setState(
+                                      () => _showPassword = !_showPassword);
+                                },
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                  borderSide: const BorderSide(
+                                      width: 2, color: Colors.blue)),
+                            )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       ////////////////////////////////////////////////////////////////////////////
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+                      const Padding(
+                        padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextField(
                           obscureText: true,
                           decoration: InputDecoration(

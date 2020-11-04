@@ -1,22 +1,22 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import '../authentication/sign_in/sign_in_view.dart';
 import '../time/time_view.dart';
 import 'package:provider/provider.dart';
 import '../../../app/constants/strings.dart';
 import '../../../app/services/firebase_auth_service.dart';
-import 'package:flutter_web_firebase_googe_auth/size_config.dart';
+import '../../../size_config.dart';
 
-String name = '';
-final FirebaseAuth _auth = FirebaseAuth.instance;
-getCurrentUserName() async {
-  final user = await _auth.currentUser();
-  if (user.isAnonymous) {
-    name = 'Guest';
-  } else {
-    name = user.displayName;
-  }
-}
+// String name = '';
+// final FirebaseAuth _auth = FirebaseAuth.instance;
+// getCurrentUserName() async {
+//   final user = await _auth.currentUser();
+//   if (user.isAnonymous) {
+//     name = 'Guest';
+//   } else {
+//     name = user.displayName;
+//   }
+// }
 
 class HomeView extends StatelessWidget {
   const HomeView({Key key}) : super(key: key);
@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
     // variable size
     Size size = MediaQuery.of(context).size;
 
-    getCurrentUserName();
+//    getCurrentUserName();
     return Scaffold(
       backgroundColor: Colors.blue[200],
       body: Center(
@@ -45,8 +45,9 @@ class HomeView extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.all(20),
                         child: Text(
-                          '\t\tHome Page \n Welcome to Americorps VISTA',
+                          'Home Page\nWelcome to Americorps VISTA\n' + name,
                           style: Theme.of(context).textTheme.headline4,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                       const Spacer(),
@@ -104,11 +105,11 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(55),
               width: getProportionateScreenWidth(55),
               decoration: BoxDecoration(
-                color: Color(0xFFFFECDF),
+                color: const Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(height: 5),
+            const SizedBox(height: 5),
             Text(text, textAlign: TextAlign.center)
           ],
         ),

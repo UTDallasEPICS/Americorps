@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../home/home_view.dart';
+import '../authentication/sign_in/sign_in_view.dart';
 
 var timeOfDay = TimeOfDay.now();
 
