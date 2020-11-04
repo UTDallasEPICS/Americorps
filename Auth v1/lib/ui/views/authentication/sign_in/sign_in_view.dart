@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -154,22 +156,24 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       const SizedBox(
                         height: 8,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(40, 00, 40, 10),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Email',
                             labelText: 'Email',
-                            suffixIcon: Icon(
+                            suffixIcon: const Icon(
                               Icons.mail_outline,
                             ),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: const BorderSide(
+                                    width: 2.5, color: Colors.blue)),
                           ),
                         ),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      // //////////////////////////////////////////////////////////////////////////
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                         child: TextField(
@@ -188,28 +192,14 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                                 },
                               ),
                               focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(15),
                                   borderSide: const BorderSide(
-                                      width: 2, color: Colors.blue)),
+                                      width: 2.5, color: Colors.blue)),
                             )),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      ////////////////////////////////////////////////////////////////////////////
-                      // const Padding(
-                      //   padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                      //   child: TextField(
-                      //     obscureText: true,
-                      //     decoration: InputDecoration(
-                      //       hintText: 'Password',
-                      //       labelText: 'Password',
-                      //       suffixIcon: Icon(
-                      //         Icons.lock_outline,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
                       Expanded(
                         child: isLoading
                             ? _loadingIndicator()
@@ -235,9 +225,20 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   Column _signInButtons(BuildContext context) {
     return Column(
       children: <Widget>[
-        const Spacer(),
+        //const Spacer(),
         const AnonymousSignInButton(),
-        const Spacer(),
+        Padding(
+          padding: const EdgeInsets.all(10),
+          child: Text(
+            'OR',
+            style: TextStyle(
+              color: Colors.grey[500],
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        // const Spacer(),
         const GoogleSignInButton(),
         const Spacer(),
       ],
