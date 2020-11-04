@@ -150,6 +150,7 @@ class SignInViewBody extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextField(
+                          obscureText: true,
                           decoration: InputDecoration(
                             hintText: 'Password',
                             labelText: 'Password',
