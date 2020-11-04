@@ -197,19 +197,19 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                         height: 15,
                       ),
                       ////////////////////////////////////////////////////////////////////////////
-                      const Padding(
-                        padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                        child: TextField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                            hintText: 'Password',
-                            labelText: 'Password',
-                            suffixIcon: Icon(
-                              Icons.lock_outline,
-                            ),
-                          ),
-                        ),
-                      ),
+                      // const Padding(
+                      //   padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
+                      //   child: TextField(
+                      //     obscureText: true,
+                      //     decoration: InputDecoration(
+                      //       hintText: 'Password',
+                      //       labelText: 'Password',
+                      //       suffixIcon: Icon(
+                      //         Icons.lock_outline,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // ),
                       Expanded(
                         child: isLoading
                             ? _loadingIndicator()
