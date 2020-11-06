@@ -2,10 +2,11 @@ import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'widgets/email_password_sign_in_button.dart';
 import 'package:provider/provider.dart';
 
 import 'sign_in_view_model.dart';
-import 'widgets/anonymous_sign_in_button.dart';
+//import 'widgets/anonymous_sign_in_button.dart';
 import 'widgets/google_sign_in_button.dart';
 
 String name = '';
@@ -18,6 +19,9 @@ void getCurrentUserName() async {
     name = user.displayName;
   }
 }
+
+final emailController = TextEditingController();
+final passwordController = TextEditingController();
 
 class SignInView extends StatefulWidget {
   const SignInView({Key key}) : super(key: key);
@@ -49,6 +53,16 @@ class SignInViewBody extends StatefulWidget {
 
 class _SignInViewBodyState extends State<SignInViewBody> {
   bool _showPassword = false;
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    // emailController.dispose();
+    // passwordController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final isLoading =
@@ -158,7 +172,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       ),
                       Padding(
                         padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
-                        child: TextField(
+                        child: TextFormField(
+                          style: TextStyle(fontFamily: 'OverpassRegular'),
                           decoration: InputDecoration(
                             labelText: 'Email',
                             suffixIcon: const Icon(
@@ -169,6 +184,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                                 borderSide: const BorderSide(
                                     width: 2.5, color: Colors.blue)),
                           ),
+                          controller: emailController,
                         ),
                       ),
                       const SizedBox(
@@ -176,26 +192,28 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
-                        child: TextField(
-                            obscureText: !_showPassword,
-                            decoration: InputDecoration(
-                              labelText: 'Password',
-                              suffixIcon: IconButton(
-                                icon: Icon(
-                                  _showPassword
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                ),
-                                onPressed: () {
-                                  setState(
-                                      () => _showPassword = !_showPassword);
-                                },
+                        child: TextFormField(
+                          style: const TextStyle(fontFamily: 'OverpassRegular'),
+                          obscureText: !_showPassword,
+                          decoration: InputDecoration(
+                            labelText: 'Password',
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                _showPassword
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
                               ),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(15),
-                                  borderSide: const BorderSide(
-                                      width: 2.5, color: Colors.blue)),
-                            )),
+                              onPressed: () {
+                                setState(() => _showPassword = !_showPassword);
+                              },
+                            ),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(15),
+                                borderSide: const BorderSide(
+                                    width: 2.5, color: Colors.blue)),
+                          ),
+                          controller: passwordController,
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
@@ -226,7 +244,8 @@ class _SignInViewBodyState extends State<SignInViewBody> {
     return Column(
       children: <Widget>[
         //const Spacer(),
-        const AnonymousSignInButton(),
+        //const AnonymousSignInButton(),
+        const EmailSignInButton(),
         Padding(
           padding: const EdgeInsets.all(10),
           child: Text(

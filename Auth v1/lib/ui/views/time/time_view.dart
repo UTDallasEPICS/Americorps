@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_firebase_googe_auth/app/constants/strings.dart';
 import '../authentication/sign_in/sign_in_view.dart';
 
 var timeOfDay = TimeOfDay.now();
@@ -26,8 +28,18 @@ class TimeView extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: const Text('Back'),
-      )
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+        color: const Color.fromRGBO(66, 133, 244, 1),
+        child: const Text(
+          'Back',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'OverpassRegular',
+            fontSize: 16,
+            color: Colors.white,
+          ),
+        ),
+      ),
     ])));
   }
 }

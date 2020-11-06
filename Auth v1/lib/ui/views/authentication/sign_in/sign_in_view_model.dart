@@ -17,6 +17,13 @@ class SignInViewModel extends ChangeNotifier {
     _setNotLoading();
   }
 
+  Future<void> signInWithEmailPassword(String _email, String _password) async {
+    _setLoading();
+    await locator<FirebaseAuthService>()
+        .signInWithEmailPassword(_email, _password);
+    _setNotLoading();
+  }
+
   void _setLoading() {
     _isLoading = true;
     notifyListeners();

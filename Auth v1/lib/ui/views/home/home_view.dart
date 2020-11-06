@@ -51,23 +51,44 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      // CategoryCard(),
+                      //CategoryCard(),
                       RaisedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => TimeView()),
-                          );
-                        },
-                        child: const Text(Strings.time),
-                      ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TimeView()),
+                            );
+                          },
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
+                          color: Colors.blue,
+                          child: const Text(
+                            Strings.time,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'OverpassRegular',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          )),
                       const Spacer(),
                       RaisedButton(
-                        onPressed: () {
-                          context.read<FirebaseAuthService>().signOut();
-                        },
-                        child: const Text(Strings.signOut),
-                      ),
+                          onPressed: () {
+                            context.read<FirebaseAuthService>().signOut();
+                          },
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 15, vertical: 15),
+                          color: Colors.blue,
+                          child: const Text(
+                            Strings.signOut,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'OverpassRegular',
+                              fontSize: 16,
+                              color: Colors.white,
+                            ),
+                          )),
                       const Spacer(),
                     ],
                   ),
