@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_web_firebase_googe_auth/app/constants/strings.dart';
 import '../authentication/sign_in/sign_in_view.dart';
 
 var timeOfDay = TimeOfDay.now();

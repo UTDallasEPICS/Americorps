@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_web_firebase_googe_auth/app/services/firebase_auth_service.dart';
 import '../sign_in_view.dart';
 import 'package:provider/provider.dart';
 
