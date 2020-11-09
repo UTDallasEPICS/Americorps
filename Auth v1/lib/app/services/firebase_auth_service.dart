@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import '../../ui/views/authentication/sign_in/sign_in_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -35,9 +36,17 @@ class FirebaseAuthService {
   }
 
   Future<User> signInWithEmailPassword(String _email, String _password) async {
-    final authResult = await _firebaseAuth.signInWithEmailAndPassword(
-        email: _email, password: _password);
-    return _userFromFirebase(authResult.user);
+    try {
+      final authResult = await _firebaseAuth.signInWithEmailAndPassword(
+          email: _email, password: _password);
+      UserUpdateInfo updateInfo = UserUpdateInfo();
+      updateInfo.displayName = _email;
+      authResult.user.updateProfile(updateInfo);
+      return _userFromFirebase(authResult.user);
+    } on Exception catch (e) {
+      print(e);
+      return null;
+    }
   }
 
   Future<User> createWithEmailPassword(String _email, String _password) async {

@@ -16,21 +16,22 @@ class EmailSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () {
-        if (emailController.text == 'anon' || emailController.text.isEmpty) {
+        String e = emailController.text;
+        String p = passwordController.text;
+        if (e == 'anon' || e.isEmpty) {
           context.read<SignInViewModel>().signInAnonymously();
         } else {
-          // context.read<SignInViewModel>().signInWithEmailPassword(
-          //     emailController.text, passwordController.text);
-          return showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                  content: Text(
-                emailController.text,
-                style: const TextStyle(fontFamily: 'OverpassRegular'),
-              ));
-            },
-          );
+          context.read<SignInViewModel>().signInWithEmailPassword(e, p);
+          // return showDialog(
+          //   context: context,
+          //   builder: (context) {
+          //     return AlertDialog(
+          //         content: Text(
+          //       e,
+          //       style: const TextStyle(fontFamily: 'OverpassRegular'),
+          //     ));
+          // },
+          //);
         }
       },
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
