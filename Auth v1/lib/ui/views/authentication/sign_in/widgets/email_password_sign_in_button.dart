@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import '../../../../../app/app.dart';
 import '../sign_in_view.dart';
 import 'package:provider/provider.dart';
 
@@ -21,16 +22,24 @@ class EmailSignInButton extends StatelessWidget {
           context.read<SignInViewModel>().signInAnonymously();
         } else {
           context.read<SignInViewModel>().signInWithEmailPassword(e, p);
-          // return showDialog(
-          //   context: context,
-          //   builder: (context) {
-          //     return AlertDialog(
-          //         content: Text(
-          //       e,
-          //       style: const TextStyle(fontFamily: 'OverpassRegular'),
-          //     ));
-          // },
-          //);
+          if (invalidLogin) {
+            return showDialog(
+              context: context,
+              builder: (context) {
+                Future.delayed(const Duration(seconds: 1)).then((_) {
+                  Navigator.of(context).pop();
+                });
+                return const AlertDialog(
+                  content: Text(
+                    'Invalid Credentials',
+                    style: TextStyle(
+                        fontFamily: 'OverpassRegular', color: Colors.red),
+                  ),
+                  backgroundColor: Colors.white60,
+                );
+              },
+            );
+          }
         }
       },
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),

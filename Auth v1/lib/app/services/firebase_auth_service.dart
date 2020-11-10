@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../../ui/views/authentication/sign_in/sign_in_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
+import '../app.dart';
 import '../models/user.dart';
 
 class FirebaseAuthService {
@@ -38,12 +39,14 @@ class FirebaseAuthService {
     try {
       final authResult = await _firebaseAuth.signInWithEmailAndPassword(
           email: _email, password: _password);
+      invalidLogin = false;
       UserUpdateInfo updateInfo = UserUpdateInfo();
       updateInfo.displayName = _email;
       authResult.user.updateProfile(updateInfo);
       return _userFromFirebase(authResult.user);
-    } on Exception catch (e) {
-      print(e);
+    } on Error catch (err) {
+      print(err);
+      invalidLogin = true;
       return null;
     }
   }

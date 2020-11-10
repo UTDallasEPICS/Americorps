@@ -5,6 +5,8 @@ import '../ui/views/authentication/sign_in/sign_in_view.dart';
 import '../ui/views/home/home_view.dart';
 import 'models/user.dart';
 
+bool invalidLogin = true;
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
 //             return const HomeView();
 //           }
 //         }
-  
+
 //   }
 //   @override
 //   Widget build(BuildContext context) {
