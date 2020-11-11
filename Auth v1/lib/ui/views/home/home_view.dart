@@ -102,15 +102,43 @@ class HomeView extends StatelessWidget {
   }
 }
 
+class Categories extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    List<Map<String, dynamic>> categories = [
+      {"text": "Flash Deal"},
+      {"text": "Bill"},
+      {"text": "Game"},
+      {"text": "Daily Gift"},
+      {"text": "More"},
+    ];
+    return Padding(
+      padding: EdgeInsets.all(getProportionateScreenWidth(20)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: List.generate(
+          categories.length,
+          (index) => CategoryCard(
+            // icon: categories[index]["icon"],
+            text: categories[index]["text"],
+            press: () {},
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key key,
-    @required this.icon,
+    // @required this.icon,
     @required this.text,
     @required this.press,
   }) : super(key: key);
 
-  final String icon, text;
+  final String text;
   final GestureTapCallback press;
 
   @override
@@ -126,11 +154,12 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(55),
               width: getProportionateScreenWidth(55),
               decoration: BoxDecoration(
-                color: const Color(0xFFFFECDF),
+                color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
+              //  child: SvgPicture.icons(Icon-192.png),
             ),
-            const SizedBox(height: 5),
+            SizedBox(height: 5),
             Text(text, textAlign: TextAlign.center)
           ],
         ),
