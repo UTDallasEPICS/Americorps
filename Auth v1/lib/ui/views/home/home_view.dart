@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../../../app/constants/strings.dart';
 import '../../../app/services/firebase_auth_service.dart';
 import '../../../size_config.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 // String name = '';
 // final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -109,12 +110,13 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"text": "Time"},
-      {"text": "View Hours"},
-      {"text": "Schedule"},
-      {"text": "Settings"},
-      {"text": "Logout"},
+      {"icon": "assets/icons8-clock.svg", "text": "Time"},
+      {"icon": "assets/icons8-schedule-48.png", "text": "View Hours"},
+      {"icon": "assets/icons8-room-finder-48.png", "text": "Schedule"},
+      {"icon": "assets/icons8-settings.svg", "text": "Settings"},
+      {"icon": "assets/icons8-shutdown-48.png", "text": "Logout"},
     ];
+
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: Row(
@@ -123,7 +125,7 @@ class Categories extends StatelessWidget {
         children: List.generate(
           categories.length,
           (index) => CategoryCard(
-            // icon: categories[index]["icon"],
+            icon: categories[index]["icon"],
             text: categories[index]["text"],
             press: () {},
           ),
@@ -136,12 +138,12 @@ class Categories extends StatelessWidget {
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     Key key,
-    // @required this.icon,
+    @required this.icon,
     @required this.text,
     @required this.press,
   }) : super(key: key);
 
-  final String text;
+  final String icon, text;
   final GestureTapCallback press;
 
   @override
@@ -160,7 +162,7 @@ class CategoryCard extends StatelessWidget {
                 color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
-              //  child: SvgPicture.icons(Icon-192.png),
+              child: SvgPicture.asset(icon),
             ),
             SizedBox(height: 3),
             Text(text, textAlign: TextAlign.center)
