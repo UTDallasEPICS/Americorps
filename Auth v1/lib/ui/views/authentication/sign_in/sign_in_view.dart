@@ -6,7 +6,6 @@ import 'widgets/email_password_sign_in_button.dart';
 import 'package:provider/provider.dart';
 
 import 'sign_in_view_model.dart';
-//import 'widgets/anonymous_sign_in_button.dart';
 import 'widgets/google_sign_in_button.dart';
 
 String name = '';
