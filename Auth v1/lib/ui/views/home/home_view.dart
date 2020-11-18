@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../authentication/sign_in/sign_in_view.dart';
@@ -24,6 +26,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     // variable size
     Size size = MediaQuery.of(context).size;
+    SizeConfig().init(context);
 
 //    getCurrentUserName();
     return Scaffold(
@@ -51,7 +54,7 @@ class HomeView extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      //CategoryCard(),
+                      Categories(),
                       RaisedButton(
                           onPressed: () {
                             Navigator.push(
@@ -106,11 +109,11 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"text": "Flash Deal"},
-      {"text": "Bill"},
-      {"text": "Game"},
-      {"text": "Daily Gift"},
-      {"text": "More"},
+      {"text": "Time"},
+      {"text": "View Hours"},
+      {"text": "Schedule"},
+      {"text": "Settings"},
+      {"text": "Logout"},
     ];
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
@@ -150,16 +153,16 @@ class CategoryCard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-              height: getProportionateScreenWidth(55),
-              width: getProportionateScreenWidth(55),
+              padding: EdgeInsets.all(getProportionateScreenWidth(5)),
+              height: getProportionateScreenWidth(25),
+              width: getProportionateScreenWidth(25),
               decoration: BoxDecoration(
                 color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
               //  child: SvgPicture.icons(Icon-192.png),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 3),
             Text(text, textAlign: TextAlign.center)
           ],
         ),
