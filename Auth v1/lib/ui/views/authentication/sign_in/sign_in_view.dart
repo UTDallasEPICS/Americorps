@@ -57,10 +57,10 @@ class _SignInViewBodyState extends State<SignInViewBody> {
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
-    // emailController.dispose();
-    // passwordController.dispose();
+    emailController.clear();
+    passwordController.clear();
 
-    // super.dispose();
+    super.dispose();
   }
 
   @override
