@@ -22,6 +22,9 @@ void getCurrentUserName() async {
 final emailController = TextEditingController();
 final passwordController = TextEditingController();
 
+final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+GlobalKey<State<StatefulWidget>> get scaffoldKey => _scaffoldKey;
+
 class SignInView extends StatefulWidget {
   const SignInView({Key key}) : super(key: key);
 
@@ -67,7 +70,10 @@ class _SignInViewBodyState extends State<SignInViewBody> {
     final isLoading =
         context.select((SignInViewModel viewModel) => viewModel.isLoading);
     Size size = MediaQuery.of(context).size;
+    final _passNode = FocusNode();
+    final _emailNode = FocusNode();
     return Scaffold(
+      key: _scaffoldKey,
       body: Container(
         child: Stack(
           children: [
@@ -172,6 +178,12 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       Padding(
                         padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextFormField(
+                          focusNode: _emailNode,
+                          onFieldSubmitted: (term) {
+                            _emailNode.unfocus();
+                            FocusScope.of(context).requestFocus(_passNode);
+                          },
+                          autofocus: true,
                           style: TextStyle(fontFamily: 'OverpassRegular'),
                           decoration: InputDecoration(
                             labelText: 'Email',
@@ -192,6 +204,10 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                         child: TextFormField(
+                          focusNode: _passNode,
+                          onFieldSubmitted: (value) {
+                            FocusScope.of(context).requestFocus(_passNode);
+                          },
                           style: const TextStyle(fontFamily: 'OverpassRegular'),
                           obscureText: !_showPassword,
                           decoration: InputDecoration(

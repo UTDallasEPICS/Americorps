@@ -22,12 +22,12 @@ class EmailSignInButton extends StatelessWidget {
           await context.read<SignInViewModel>().signInAnonymously();
         } else {
           await context.read<SignInViewModel>().signInWithEmailPassword(e, p);
-          if (invalidLogin) {
+          if (loginBool) {
             return showDialog(
-              context: context,
-              builder: (context) {
+              context: scaffoldKey.currentContext,
+              builder: (dialogContext) {
                 Future.delayed(const Duration(seconds: 1)).then((_) {
-                  Navigator.of(context).pop();
+                  Navigator.of(dialogContext).pop();
                 });
                 return const AlertDialog(
                   content: Text(
