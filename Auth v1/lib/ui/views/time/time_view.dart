@@ -7,8 +7,8 @@ var timeOfDay = TimeOfDay.now();
 TextEditingController timeController = TextEditingController();
 final dbRef = Firestore.instance;
 var addedTime = 0.0, prevTime = 0.0;
-// ignore: missing_return
-Future<double> get _prevTime async {
+
+void getPrevTime() async {
   try {
     await dbRef.collection('users').document(name).get().then((value) {
       prevTime = value.data['TimeLog'];
@@ -25,10 +25,9 @@ class TimeView extends StatefulWidget {
 }
 
 class _TimeViewState extends State<TimeView> {
-  String timeLogText =
-      'Your total time logged is ' + (addedTime + prevTime).toString();
+  String timeLogText = 'Your total time logged is ' + (prevTime).toString();
   void changeText() async {
-    await _prevTime;
+    await getPrevTime();
     setState(() {
       timeLogText = 'Your total time logged is ' + (prevTime).toString();
     });
@@ -84,7 +83,7 @@ class _TimeViewState extends State<TimeView> {
                       onPressed: () async {
                         addedTime = double.parse(timeController.text);
                         try {
-                          await _prevTime;
+                          await getPrevTime();
                           await dbRef
                               .collection('users')
                               .document(name)
