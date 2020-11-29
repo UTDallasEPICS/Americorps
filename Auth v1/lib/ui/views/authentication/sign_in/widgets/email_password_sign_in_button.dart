@@ -15,13 +15,13 @@ class EmailSignInButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () {
+      onPressed: () async {
         String e = emailController.text;
         String p = passwordController.text;
         if (e == 'anon' || e.isEmpty) {
-          context.read<SignInViewModel>().signInAnonymously();
+          await context.read<SignInViewModel>().signInAnonymously();
         } else {
-          context.read<SignInViewModel>().signInWithEmailPassword(e, p);
+          await context.read<SignInViewModel>().signInWithEmailPassword(e, p);
           if (invalidLogin) {
             return showDialog(
               context: context,
