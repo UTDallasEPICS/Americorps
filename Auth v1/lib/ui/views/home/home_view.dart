@@ -45,6 +45,7 @@ class HomeView extends StatelessWidget {
                       ),
                       const Spacer(),
                       Categories(),
+                      //IconButtons(),
                       RaisedButton(
                           onPressed: () {
                             Navigator.push(
@@ -99,11 +100,11 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons8-clock.svg", "text": "Time"},
-      {"icon": "assets/icons8-schedule-48.png", "text": "View Hours"},
-      {"icon": "assets/icons8-room-finder-48.png", "text": "Schedule"},
-      {"icon": "assets/icons8-settings.svg", "text": "Settings"},
-      {"icon": "assets/icons8-shutdown-48.png", "text": "Logout"},
+      {"icon": "icons8-time-48.png", "text": "Time"},
+      {"icon": "icons8-schedule-48.png", "text": "View Hours"},
+      {"icon": "icons8-room-finder-48.png", "text": "Schedule"},
+      {"icon": "icons8-settings-48.png", "text": "Settings"},
+      {"icon": "icons8-shutdown-48.png", "text": "Logout"},
     ];
 
     return Padding(
@@ -151,7 +152,7 @@ class CategoryCard extends StatelessWidget {
                 color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
-              child: SvgPicture.asset(icon),
+              child: Image.asset(icon),
             ),
             SizedBox(height: 3),
             Text(text, textAlign: TextAlign.center)
@@ -161,3 +162,19 @@ class CategoryCard extends StatelessWidget {
     );
   }
 }
+
+// class IconButtons extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Center(
+//         child: IconButton(
+//       icon: const AssetImage('assets/icons8-clock.svg') as Widget,
+//       onPressed: () {
+//         Navigator.push(
+//           context,
+//           MaterialPageRoute(builder: (context) => TimeView()),
+//         );
+//       },
+//     ));
+//   }
+// }

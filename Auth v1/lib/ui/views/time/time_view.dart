@@ -33,6 +33,9 @@ class _TimeViewState extends State<TimeView> {
     });
   }
 
+  String hr = timeOfDay.hour.toString();
+  String min = timeOfDay.minute.toString();
+
   @override
   Widget build(BuildContext context) {
     //getCurrentUserName();
@@ -42,12 +45,7 @@ class _TimeViewState extends State<TimeView> {
       Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
-            'The time is now ' +
-                timeOfDay.hour.toString() +
-                ':' +
-                timeOfDay.minute.toString() +
-                ', ' +
-                name,
+            'The time is now ' + hr + ':' + min + ', ' + name,
             style: Theme.of(context).textTheme.headline4,
           )),
       Row(

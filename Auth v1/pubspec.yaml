@@ -45,6 +45,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - ./web/assets/icons8-time-48.png
+    - ./web/assets/icons8-room-finder-48.png
+    - ./web/assets/icons8-schedule-48.png
+    - ./web/assets/icons8-settings-48.png
+    - ./web/assets/icons8-shutdown-48.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg
