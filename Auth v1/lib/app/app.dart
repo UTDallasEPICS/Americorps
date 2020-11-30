@@ -6,6 +6,7 @@ import '../ui/views/home/home_view.dart';
 import 'models/user.dart';
 
 bool invalidLogin = true;
+bool get loginBool => invalidLogin;
 
 class MyApp extends StatelessWidget {
   @override
