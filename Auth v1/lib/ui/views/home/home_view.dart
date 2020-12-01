@@ -45,7 +45,6 @@ class HomeView extends StatelessWidget {
                       ),
                       const Spacer(),
                       Categories(),
-                      //IconButtons(),
                       RaisedButton(
                           onPressed: () {
                             Navigator.push(
@@ -151,6 +150,14 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(25),
               width: getProportionateScreenWidth(25),
               decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.8),
+                    spreadRadius: 1,
+                    blurRadius: 3,
+                    offset: Offset(2, 3), // changes position of shadow
+                  ),
+                ],
                 color: const Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
