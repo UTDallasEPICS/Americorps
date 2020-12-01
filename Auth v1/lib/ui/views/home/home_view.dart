@@ -151,13 +151,19 @@ class CategoryCard extends StatelessWidget {
               height: getProportionateScreenWidth(25),
               width: getProportionateScreenWidth(25),
               decoration: BoxDecoration(
-                color: Color(0xFFFFECDF),
+                color: const Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Image.asset(icon),
             ),
-            SizedBox(height: 3),
-            Text(text, textAlign: TextAlign.center)
+            const SizedBox(height: 3),
+            Text(
+              text,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontFamily: 'OverpassRegular',
+              ),
+            )
           ],
         ),
       ),

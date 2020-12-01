@@ -71,35 +71,43 @@ class _TimeViewState extends State<TimeView> {
           ),
           Expanded(
               child: Padding(
-                  padding: const EdgeInsets.fromLTRB(40, 20, 400, 10),
-                  child: RaisedButton(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 15),
-                      child: const Text(
-                        'Submit',
-                      ),
-                      onPressed: () async {
-                        addedTime = double.parse(timeController.text);
-                        try {
-                          await getPrevTime();
-                          await dbRef
-                              .collection('users')
-                              .document(name)
-                              .updateData({'TimeLog': prevTime + addedTime});
-                          print(
-                              'New Time: ' + (prevTime + addedTime).toString());
-                        } catch (e) {
-                          print(e.toString());
-                          // handle errors
-                        }
-                        changeText();
-                      }))),
+            padding: const EdgeInsets.fromLTRB(40, 20, 400, 10),
+            child: RaisedButton(
+                onPressed: () async {
+                  addedTime = double.parse(timeController.text);
+                  try {
+                    await getPrevTime();
+                    await dbRef
+                        .collection('users')
+                        .document(name)
+                        .updateData({'TimeLog': prevTime + addedTime});
+                    print('New Time: ' + (prevTime + addedTime).toString());
+                  } catch (e) {
+                    print(e.toString());
+                    // handle errors
+                  }
+                  changeText();
+                },
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                child: const Text(
+                  'Submit',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'OverpassRegular',
+                    fontSize: 16,
+                  ),
+                )),
+          )),
         ],
       ),
       Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
             '$timeLogText',
+            style: TextStyle(
+              fontFamily: 'OverpassRegular',
+            ),
           )),
       Padding(
         padding: const EdgeInsets.fromLTRB(8, 40, 8, 8),
