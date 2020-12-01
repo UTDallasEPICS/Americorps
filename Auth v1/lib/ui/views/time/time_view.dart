@@ -122,6 +122,7 @@ class _TimeViewState extends State<TimeView> {
                     // handle errors
                   }
                   changeText();
+                  timeController.clear();
                 },
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
