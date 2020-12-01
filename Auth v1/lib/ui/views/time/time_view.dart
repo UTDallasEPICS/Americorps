@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../authentication/sign_in/sign_in_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -25,6 +28,41 @@ class TimeView extends StatefulWidget {
 }
 
 class _TimeViewState extends State<TimeView> {
+  String _timeString = '';
+  var timer;
+  @override
+  void initState() {
+    super.initState();
+    changeText();
+    timer = Timer.periodic(
+        const Duration(seconds: 1), (Timer t) => _getCurrentTime());
+  }
+
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
+
+  void _getCurrentTime() {
+    setState(() {
+      String second = (DateTime.now().second).toString();
+      if (second.length == 1) {
+        second = '0' + second;
+      }
+      String minute = (DateTime.now().minute).toString();
+      if (minute.length == 1) {
+        minute = '0' + minute;
+      }
+      String hour = (DateTime.now().hour).toString();
+      if (hour.length == 1) {
+        hour = '0' + hour;
+      }
+      _timeString = '${hour}:${minute}:${second}';
+    });
+    //print(_timeString);
+  }
+
   String timeLogText = 'Your total time logged is ' + (prevTime).toString();
   void changeText() async {
     await getPrevTime();
@@ -32,9 +70,6 @@ class _TimeViewState extends State<TimeView> {
       timeLogText = 'Your total time logged is ' + (prevTime).toString();
     });
   }
-
-  String hr = timeOfDay.hour.toString();
-  String min = timeOfDay.minute.toString();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +80,7 @@ class _TimeViewState extends State<TimeView> {
       Padding(
           padding: const EdgeInsets.all(16),
           child: Text(
-            'The time is now ' + hr + ':' + min + ', ' + name,
+            'User: ' + name + '\n' + _timeString,
             style: Theme.of(context).textTheme.headline4,
           )),
       Row(

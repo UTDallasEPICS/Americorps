@@ -29,6 +29,7 @@ dependencies:
   flutter_auth_buttons: ^0.8.0
   google_sign_in: ^4.4.6
   provider: ^4.1.1
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
