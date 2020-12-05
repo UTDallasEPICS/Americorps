@@ -18,10 +18,14 @@ class EmailSignInButton extends StatelessWidget {
       onPressed: () async {
         String e = emailController.text;
         String p = passwordController.text;
+
+        //TODO: remove using anonymous login for final release
         if (e == 'anon' || e.isEmpty) {
           await context.read<SignInViewModel>().signInAnonymously();
         } else {
           await context.read<SignInViewModel>().signInWithEmailPassword(e, p);
+
+          // show error message if invalid login
           if (loginBool) {
             return showDialog(
               context: scaffoldKey.currentContext,

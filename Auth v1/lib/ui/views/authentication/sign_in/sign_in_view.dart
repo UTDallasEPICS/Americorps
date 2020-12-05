@@ -1,3 +1,5 @@
+// The first page of the app
+
 import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,6 +10,8 @@ import 'package:provider/provider.dart';
 import 'sign_in_view_model.dart';
 import 'widgets/google_sign_in_button.dart';
 
+// To get the name. can try using currentUser(), but I couldn't figure it out properly.
+// add email, id, etc if needed (will be needed for cloud firestore)
 String name = '';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 void getCurrentUserName() async {
@@ -175,6 +179,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       const SizedBox(
                         height: 8,
                       ),
+                      // Email field
                       Padding(
                         padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                         child: TextFormField(
@@ -201,6 +206,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       const SizedBox(
                         height: 15,
                       ),
+                      // Password field
                       Padding(
                         padding: const EdgeInsets.fromLTRB(40, 20, 40, 10),
                         child: TextFormField(
@@ -233,6 +239,7 @@ class _SignInViewBodyState extends State<SignInViewBody> {
                       const SizedBox(
                         height: 15,
                       ),
+                      // sign in buttons or loading symbol
                       Expanded(
                         child: isLoading
                             ? _loadingIndicator()

@@ -13,6 +13,8 @@ var addedTime = 0.0, prevTime = 0.0;
 
 void getPrevTime() async {
   try {
+    //TODO: DO NOT USE NAME HERE, use userid or firebase id or whatever, cause names are not unique.
+    // that means the name of the list in firebase itself needs to be the userid itself, not the name as it currently is
     await dbRef.collection('users').document(name).get().then((value) {
       prevTime = value.data['TimeLog'];
     });
@@ -30,22 +32,26 @@ class TimeView extends StatefulWidget {
 class _TimeViewState extends State<TimeView> {
   String _timeString = '';
   var timer;
+
   @override
   void initState() {
     super.initState();
     changeText();
+    // to update time every second
     timer = Timer.periodic(
         const Duration(seconds: 1), (Timer t) => _getCurrentTime());
   }
 
   @override
   void dispose() {
+    // if not disposed, keeps giving error every second as timer keeps running
     timer.cancel();
     super.dispose();
   }
 
   void _getCurrentTime() {
     setState(() {
+      // if time was 1:01 am, it used to show it as 1:1, so we have to manually add zero for single digit time
       String second = (DateTime.now().second).toString();
       if (second.length == 1) {
         second = '0' + second;
@@ -116,6 +122,7 @@ class _TimeViewState extends State<TimeView> {
                         .collection('users')
                         .document(name)
                         .updateData({'TimeLog': prevTime + addedTime});
+                    //TODO: just remove all print() statements cause they wont be needed in final release
                     print('New Time: ' + (prevTime + addedTime).toString());
                   } catch (e) {
                     print(e.toString());

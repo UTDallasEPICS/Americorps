@@ -98,12 +98,13 @@ class HomeView extends StatelessWidget {
 class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // find a way to add functions, by writing 'press': .....
     List<Map<String, dynamic>> categories = [
-      {"icon": "icons8-time-48.png", "text": "Time"},
-      {"icon": "icons8-schedule-48.png", "text": "View Hours"},
-      {"icon": "icons8-room-finder-48.png", "text": "Schedule"},
-      {"icon": "icons8-settings-48.png", "text": "Settings"},
-      {"icon": "icons8-shutdown-48.png", "text": "Logout"},
+      {'icon': 'icons8-time-48.png', 'text': 'Time'},
+      {'icon': 'icons8-schedule-48.png', 'text': 'View Hours'},
+      {'icon': 'icons8-room-finder-48.png', 'text': 'Schedule'},
+      {'icon': 'icons8-settings-48.png', 'text': 'Settings'},
+      {'icon': 'icons8-shutdown-48.png', 'text': 'Logout'},
     ];
 
     return Padding(
@@ -114,9 +115,10 @@ class Categories extends StatelessWidget {
         children: List.generate(
           categories.length,
           (index) => CategoryCard(
-              icon: categories[index]["icon"],
-              text: categories[index]["text"],
+              icon: categories[index]['icon'],
+              text: categories[index]['text'],
               press: () {
+                // should be just " 'press ' " and the value of that should be in table above
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => TimeView()));
               }),

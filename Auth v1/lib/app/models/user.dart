@@ -1,3 +1,5 @@
+// User class, probably dont edit this
+
 import 'package:meta/meta.dart';
 
 @immutable

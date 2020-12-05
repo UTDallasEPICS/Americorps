@@ -1,3 +1,5 @@
+// This is what brings up the loading symbol
+
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 

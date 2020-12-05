@@ -1,3 +1,6 @@
+// To sign the user in
+// Remove the anonymous sign in ability for final release
+
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../ui/views/authentication/sign_in/sign_in_view.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -30,6 +33,7 @@ class FirebaseAuthService {
     return _firebaseAuth.onAuthStateChanged.map(_userFromFirebase);
   }
 
+  //TODO: remove this for final release
   Future<User> signInAnonymously() async {
     final authResult = await _firebaseAuth.signInAnonymously();
     return _userFromFirebase(authResult.user);
@@ -51,6 +55,7 @@ class FirebaseAuthService {
     }
   }
 
+// To create a new account. Maybe only give the admin access to this
   Future<User> createWithEmailPassword(String _email, String _password) async {
     final authResult = await _firebaseAuth.createUserWithEmailAndPassword(
         email: _email, password: _password);
