@@ -3,6 +3,7 @@ import AddUserButton from '../components/AddUserButton.js';
 import EditUserButton from "../components/EditUserButton.js";
 import DeleteUserButton from "../components/DeleteUserButton.js";
 import UserBar from  '../components/UserBar';
+import '../components/AshStyle.css'
 
 /* Generates current month and year */
 function MonthYear(){

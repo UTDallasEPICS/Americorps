@@ -1,5 +1,6 @@
 import React from "react";
 import homeImg from './rick_and_rosie.png';
+import '../components/AshStyle.css'
 
 function Home() {
   return (

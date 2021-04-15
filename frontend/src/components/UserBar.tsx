@@ -1,5 +1,6 @@
 import react from "react";
 import userImg from './user-circle.png';
+import './AshStyle.css'
 
 type Props = {
     completed: number,

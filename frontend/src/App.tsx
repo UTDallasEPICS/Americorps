@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './components/admin-navbar';
 import AdminHome from './pages/admin-home';
 import Users from './pages/admin-users-list';
+import './components/AshStyle.css'
 
 function App() {
   return (

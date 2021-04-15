@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import './AshStyle.css'
 
 {/* This is a filler navbar so I can work on multiple pages,
 I plan on trashing this in favor of shiva's navbar component */}
