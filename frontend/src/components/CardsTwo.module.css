@@ -1,0 +1,88 @@
+.CardsTwo {
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.CardsItemsTwo {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* width: min-content; */
+}
+
+.CardsTwoTwo {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.CardsItemTwo {
+    width: 250px;
+    display: inline-block;
+    /* border-radius: 10px; */
+}
+
+.CardsItemBlockTwo {
+    height: 375px;
+    position: relative;
+}
+
+.CardsItemFigureTwo {
+    width: 200px;
+    height: 200px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemFigureTwo h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemExtraTwo {
+    width: 200px;
+    height: 200px;
+    background-color: #A3000A;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemExtraTwo h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemTitleTwo {
+    text-align: center;
+}
+
+.CardsItemTotalTwo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: fit-content;
+}
+
+h2 {
+    font-weight: lighter;
+}

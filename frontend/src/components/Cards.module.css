@@ -1,0 +1,83 @@
+.Cards {
+    padding-right: 4rem;
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.CardsItems {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    /* width: min-content; */
+}
+
+.CardsItem {
+    width: 375px;
+    display: inline-block;
+    /* border-radius: 10px; */
+}
+
+.CardsItemBlock {
+    height: 375px;
+    position: relative;
+}
+
+.CardsItemFigure {
+    width: 200px;
+    height: 200px;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemSpecial {
+    width: 200px;
+    height: 200px;
+    border-color: #fff;
+    background-color: #0B2A77;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemSpecial h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemFigure h1 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CardsItemTitle {
+    text-align: center;
+}
+
+.CardsItemTotal {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    width: fit-content;
+}
+
+h2 {
+    font-weight: lighter;
+}
