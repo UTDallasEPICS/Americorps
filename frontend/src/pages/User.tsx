@@ -1,8 +1,8 @@
 import React from 'react';
-import CardsThree from '../components/CardsThree';
-import CardsFour from '../components/CardsFour';
-import TimeCard from '../components/TimeCard';
+import UserDemoCards from '../components/UserDemoCards';
+import UserTimeCard from '../components/UserTimeCard';
 import styles from './User.module.css';
+import UserMemberCards from '../components/UserMemberCards';
 
 function User() {
     return (
@@ -24,7 +24,7 @@ function User() {
                     </div>
                 </div>
             </div>
-            <TimeCard />
+            <UserTimeCard />
             <div className={styles.Monthly}>
                 <div className={styles.Month}>
                     <h1>Monthly Total: 97.5 hrs</h1>
@@ -36,11 +36,11 @@ function User() {
             <div className={styles.Demo}>
                 <h1>Demographics</h1>
             </div>
-            <CardsThree />
+            <UserDemoCards />
             <div className={styles.Member}>
                 <h1>Member Development</h1>
             </div>
-            <CardsFour />
+            <UserMemberCards />
         </div>
     )
 }

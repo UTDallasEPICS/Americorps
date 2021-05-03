@@ -2,7 +2,7 @@ import React from 'react';
 import Time from "./Time";
 import styles from './Time.module.css';
 
-function TimeCard() {
+function UserTimeCard() {
     return (
         <div className={styles.TimeCards}>
             <ul className={styles.TimeCardsItems}>
@@ -31,4 +31,4 @@ function TimeCard() {
     )
 }
 
-export default TimeCard
+export default UserTimeCard

@@ -1,6 +1,6 @@
 import React from 'react';
-import Cards from '../components/Cards';
-import CardsTwo from '../components/CardsTwo';
+import DemoCards from '../components/DemoCards';
+import MemberCards from '../components/MemberCards';
 import styles from './Info.module.css';
 
 function Info() {
@@ -17,12 +17,12 @@ function Info() {
             <div className={styles.Demo}>
                 <h1>Demographics</h1>
             </div>
-            <Cards />
+            <DemoCards />
             {/* <hr></hr> */}
             <div className={styles.Member}>
                 <h1>Member Development</h1>
             </div>
-            <CardsTwo />
+            <MemberCards />
         </div>
     )
 }
