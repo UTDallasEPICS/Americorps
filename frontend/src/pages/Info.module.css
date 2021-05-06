@@ -1,0 +1,39 @@
+.Info {
+    color: #fff;
+    background-color: #112542;
+}
+
+.InfoTop {
+    display: flex;
+    justify-content: space-between;
+}
+
+.InfoTopLeft {
+    display: inline-block;
+}
+
+.InfoTopLeft h1 {
+    font-weight: lighter;
+    padding-left: 1rem;
+    padding-top: 1rem;
+}
+
+.InfoTopRight {
+    display: inline-block;
+}
+
+.Demo {
+    padding-top: 2rem;
+}
+
+.Demo h1 {
+    padding-left: 2rem;
+}
+
+.Member {
+    padding-top: 2rem;
+}
+
+.Member h1 {
+    padding-left: 2rem;
+}
