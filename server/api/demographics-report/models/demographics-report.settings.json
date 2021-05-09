@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demographics_reports",
+  "info": {
+    "name": "Demographics_Report"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "demographics_id": {
+      "type": "biginteger"
+    },
+    "recruited_volunteers": {
+      "type": "biginteger"
+    },
+    "number_of_hours_by_recruited_volunteers": {
+      "type": "biginteger"
+    },
+    "managed_volunteers": {
+      "type": "biginteger"
+    },
+    "number_of_hours_by_managed_volunteers": {
+      "type": "biginteger"
+    },
+    "dollar_value_of_cash_resources_developed": {
+      "type": "biginteger"
+    },
+    "dollar_value_of_non_cash_resources_developed": {
+      "type": "biginteger"
+    },
+    "overall_report": {
+      "model": "overall-report"
+    }
+  }
+}

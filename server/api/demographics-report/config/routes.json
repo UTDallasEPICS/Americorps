@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/demographics-reports",
+      "handler": "demographics-report.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/demographics-reports/count",
+      "handler": "demographics-report.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/demographics-reports/:id",
+      "handler": "demographics-report.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/demographics-reports",
+      "handler": "demographics-report.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/demographics-reports/:id",
+      "handler": "demographics-report.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/demographics-reports/:id",
+      "handler": "demographics-report.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

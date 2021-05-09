@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "overall_reports",
+  "info": {
+    "name": "Overall Report"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "overall_report_id": {
+      "type": "biginteger"
+    },
+    "month": {
+      "type": "date"
+    }
+  }
+}

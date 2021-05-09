@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reports",
+  "info": {
+    "name": "Report",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "report_id": {
+      "type": "biginteger"
+    },
+    "month": {
+      "type": "date"
+    },
+    "hours": {
+      "type": "decimal"
+    },
+    "narrative": {
+      "type": "text"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "reports"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "supervisor_comments": {
+      "type": "text"
+    }
+  }
+}
