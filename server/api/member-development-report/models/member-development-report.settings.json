@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "member_development_reports",
+  "info": {
+    "name": "Member_Development_Report"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "member_development_id": {
+      "type": "biginteger"
+    },
+    "on_site_orientation": {
+      "type": "decimal"
+    },
+    "community_outreach": {
+      "type": "decimal"
+    },
+    "community_volunteer_recruitment": {
+      "type": "decimal"
+    },
+    "effective_volunteer_management": {
+      "type": "decimal"
+    },
+    "resource_mapping": {
+      "type": "decimal"
+    },
+    "resource_development": {
+      "type": "decimal"
+    },
+    "grant_writing": {
+      "type": "decimal"
+    },
+    "organizational_devleopment": {
+      "type": "decimal"
+    },
+    "performance_measures": {
+      "type": "decimal"
+    },
+    "tracking_systems": {
+      "type": "decimal"
+    },
+    "information_technology": {
+      "type": "decimal"
+    },
+    "developing_on_site_orientation": {
+      "type": "decimal"
+    },
+    "other": {
+      "type": "decimal"
+    },
+    "overall_report": {
+      "model": "overall-report"
+    }
+  }
+}
