@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Pages.module.css';
+import styles from '../../pages/Pages.module.css';
 
 function Admin() {
     return (

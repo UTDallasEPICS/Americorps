@@ -2,12 +2,12 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
-import Home from './pages/Home';
+//import Home from './pages/Home';
 import Info from './pages/Info';
 import User from './pages/User';
-import Admin from './pages/Admin'; 
-import AdminHome from './pages/admin-home';
-import Users from './pages/admin-users-list';
+import Admin from './pages/AdminPage/Admin'; 
+import AdminHome from './pages/AdminPage/admin-home';
+import Users from './pages/AdminPage/admin-users-list';
 import './components/AshStyle.css'
 
 function App() {

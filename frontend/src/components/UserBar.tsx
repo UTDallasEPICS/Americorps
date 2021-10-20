@@ -11,9 +11,9 @@ type Props = {
 const UserBar = (props: Props) => {
     const{ completed, totalHours, username } = props; 
 
-    let barLength = (completed/totalHours)*100; 
+   // let barLength = (completed/totalHours)*100; 
 
-    {/* Add ways to move positioning as more user compoents are added */}
+    /* Add ways to move positioning as more user compoents are added */
     const barPosition : react.CSSProperties = {
         position: 'relative',
         top: '210px'

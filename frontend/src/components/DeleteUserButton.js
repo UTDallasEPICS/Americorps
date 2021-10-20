@@ -1,4 +1,4 @@
-import react from "react";
+//import react from "react";
 import DeleteImg from './DeleteUser.png';
 import './AshStyle.css'
 

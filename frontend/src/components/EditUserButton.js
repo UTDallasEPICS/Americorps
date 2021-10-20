@@ -1,4 +1,4 @@
-import react from "react";
+//import react from "react";
 import EditImg from './EditUser.png';
 import './AshStyle.css'
 
