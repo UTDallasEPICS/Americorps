@@ -9,8 +9,18 @@ import Admin from './pages/Admin';
 import AdminHome from './pages/admin-home';
 import Users from './pages/admin-users-list';
 import './components/AshStyle.css'
+import firebase from './firebase.js';
+import firestore from '../../node_modules/@firebase/firestore';
+
 
 function App() {
+
+  const docRef = firebase.firestore().collection('users').doc('1');
+
+  docRef.update({
+    password: "hello world"
+  });
+
   return (
     <>
       <Router>
