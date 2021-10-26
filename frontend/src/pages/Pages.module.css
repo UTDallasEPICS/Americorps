@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center; */
   /* font-size: 3rem; */
-  background-color: #112542;
+  background-color: #07192c;
   color: #fff;
   }
   
@@ -43,3 +43,7 @@
   color: #fff;
   font-size: 100px;
   }
+  
+  .header{
+    color: #fff;
+}
