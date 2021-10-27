@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
+import history from '../../history';
 
 class UserAuth extends React.Component{
   render(){
@@ -25,7 +26,7 @@ class UserAuth extends React.Component{
                   </div>
                   {/* sign in button */}
                   <div className={styles.buttonDiv}>
-                    <input className={styles.buttonInput} type="submit" value="Sign in"/>
+                    <input className={styles.buttonInput} type="submit" value="Sign in" onClick={()=>history.push('/VistaPage')}/>
                   </div>
               </div>
         </form>

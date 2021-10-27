@@ -1,15 +1,12 @@
-import Card from '../../components/VistaHome/Card';
-import React from 'react';
-import styles from './VistaHome.module.css'
 import Time from '@material-ui/icons/AccessTime';
 import Schedule from '@material-ui/icons/DateRange';
 import Narratives from '@material-ui/icons/Create';
 import Settings from '@material-ui/icons/Settings';
+import styles from './styles.module.css';
+import Card from './Card';
 
-
-
-function VistaHomes() {
-    return (
+function VistaHome(){
+    return(
         <div>
             <div className={styles.topBar}>
                 <h1>Americorps</h1>
@@ -27,7 +24,7 @@ function VistaHomes() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default VistaHomes
+export default VistaHome;

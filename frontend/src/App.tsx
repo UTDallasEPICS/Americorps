@@ -14,6 +14,7 @@ import Users from './pages/AdminPage/admin-users-list';
 //*/
 import './components/AshStyle.css'
 import HomePage from '../src/pages/Home/HomePage';
+import VistaPage from './pages/Vista/VistaPage';
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
           {/* <Route path='/' exact component={AdminHome}/>
           <Route path='/users' exact component={Users}/>
           <Route path='/info' exact component={Info}/>
-          <Route path='/admin' exact component={Admin}/>
-          <Route path='/user' exact component={User}/> */}
+          <Route path='/admin' exact component={Admin}/>*/}
+          <Route path='/VistaPage' exact component={VistaPage}/> 
         </Switch>
       </Router>
     </>

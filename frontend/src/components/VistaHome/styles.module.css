@@ -1,0 +1,45 @@
+.mainDiv{
+    background-color: tomato;
+}
+
+.topBar {
+    padding : 20px;
+    height: 100px;
+    background-color: #0F1F37;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.username {
+    padding: 20px;
+}
+
+.homeContent {
+    height: 970px;
+    background-color: #112542;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+}
+
+button {
+    border-radius: 15px;
+    color: white;
+    background-color: #0941EB;
+    padding: 50px;
+}
+
+.time {
+    border-radius: 15px;
+    color: white;
+    background-color: #FF6B00;
+    padding: 50px;
+}
