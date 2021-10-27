@@ -1,11 +1,11 @@
 //*
 import React from 'react';
-import styles from './VistaPage.module.css';
+import styles from './AdminPage.module.css';
 //*/
-import VistaHome from '../../components/Vista/VistaHome';
+
 
 // **************************incllude props
-class VistaPage extends React.Component {
+class AdminPage extends React.Component {
 
     /*
     0=vista home page
@@ -18,7 +18,7 @@ class VistaPage extends React.Component {
     return (
       <div className={styles.mainDiv}> 
         {/* vista home page */}
-        <div><VistaHome/></div>
+        admin
         {/* vista clockIn page */}
         <div></div>
         {/* vista narratives page */}
@@ -32,4 +32,4 @@ class VistaPage extends React.Component {
     }
 }
 
-export default VistaPage;
+export default AdminPage;

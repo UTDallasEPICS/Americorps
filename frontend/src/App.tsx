@@ -8,14 +8,13 @@ import './styles/App.css';
 /*
 import Info from './pages/Info';
 import User from './pages/User';
-import Admin from './pages/AdminPage/Admin'; 
 import AdminHome from './pages/AdminPage/admin-home';
 import Users from './pages/AdminPage/admin-users-list';
 //*/
-import './components/AshStyle.css'
+
 import HomePage from '../src/pages/Home/HomePage';
 import VistaPage from './pages/Vista/VistaPage';
-
+import AdminPage from './pages/Admin/AdminPage';
 function App() {
   return (
     <>
@@ -25,8 +24,8 @@ function App() {
           <Route path='/' exact component={HomePage}/>
           {/* <Route path='/' exact component={AdminHome}/>
           <Route path='/users' exact component={Users}/>
-          <Route path='/info' exact component={Info}/>
-          <Route path='/admin' exact component={Admin}/>*/}
+          <Route path='/info' exact component={Info}/>*/}
+          <Route path='/admin' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
         </Switch>
       </Router>

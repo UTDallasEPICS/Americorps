@@ -1,4 +1,9 @@
-
+.root{
+    padding: 3%;
+    background-color: #00684c;
+    color: whitesmoke;
+    border-radius: 10%;
+}
 .topBar {
     padding : 20px;
     height: 100px;
@@ -32,6 +37,7 @@ button {
     color: white;
     background-color: #0941EB;
     padding: 50px;
+    border: none;
 }
 
 .time {
