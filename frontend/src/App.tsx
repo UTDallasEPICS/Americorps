@@ -10,7 +10,7 @@ import AdminHome from './pages/admin-home';
 import Users from './pages/admin-users-list';
 import './components/AshStyle.css'
 import firebase from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 import { initializeApp } from "./firebase/app";
 
 
@@ -30,18 +30,16 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 // export const db = firebase.firestore();
-
 // export default firebase;
 function App() {
 
-  const db = getFirestore();
+  // const db = getFirestore();
 
-// export default firebase;
-
-  const docRef = collection(db,'users');
-  docRef.update({
-    password: "hello world"
-  });
+  // const docRef = collection(db,'users');
+  // const q = query(docRef, where("password", "==", "12345"));
+  // let a;
+  // getDocs(q).then(value => { a = value; }).catch(e => { console.log("error: ", e); })
+  // console.log(a);
 
   return (
     <>
