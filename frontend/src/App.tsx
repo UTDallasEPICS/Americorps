@@ -9,14 +9,36 @@ import Admin from './pages/Admin';
 import AdminHome from './pages/admin-home';
 import Users from './pages/admin-users-list';
 import './components/AshStyle.css'
-import firebase from './firebase.js';
-import firestore from '../../node_modules/@firebase/firestore';
+import firebase from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { initializeApp } from "./firebase/app";
 
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAv_Q0TIDOXCyOjb0guTSUbgYNC4_QiwZg",
+  authDomain: "epcs-americorps.firebaseapp.com",
+  databaseURL: "https://epcs-americorps-default-rtdb.firebaseio.com",
+  projectId: "epcs-americorps",
+  storageBucket: "epcs-americorps.appspot.com",
+  messagingSenderId: "639867939960",
+  appId: "1:639867939960:web:1e510c188fd5e37dc1918d",
+  measurementId: "G-ZM76V5BY80"
+};
+
+initializeApp(firebaseConfig);
+
+// export const db = firebase.firestore();
+
+// export default firebase;
 function App() {
 
-  const docRef = firebase.firestore().collection('users').doc('1');
+  const db = getFirestore();
 
+// export default firebase;
+
+  const docRef = collection(db,'users');
   docRef.update({
     password: "hello world"
   });
