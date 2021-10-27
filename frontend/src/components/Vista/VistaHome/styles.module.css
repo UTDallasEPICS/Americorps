@@ -1,13 +1,9 @@
 .root{
-    padding: 3%;
     background-color: #00684c;
     color: whitesmoke;
     border-radius: 10%;
 }
 .topBar {
-    padding : 20px;
-    height: 100px;
-    background-color: #0F1F37;
     display: flex;
     justify-content: space-around;
     color: white;
@@ -19,7 +15,7 @@
 
 .homeContent {
     height: 970px;
-    background-color: #112542;
+    background-color: transparent;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -33,15 +29,15 @@
 }
 
 button {
-    border-radius: 15px;
+    border-radius: 10%;
     color: white;
-    background-color: #0941EB;
+    background-color: #132d72;
     padding: 50px;
     border: none;
 }
 
 .time {
-    border-radius: 15px;
+    border-radius: 10%;
     color: white;
     background-color: #FF6B00;
     padding: 50px;

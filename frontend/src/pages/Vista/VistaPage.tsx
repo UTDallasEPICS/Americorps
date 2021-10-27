@@ -1,6 +1,6 @@
 //*
 import React from 'react';
-import styles from './VistaPage.module.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 //*/
 import VistaHome from '../../components/Vista/VistaHome';
 
@@ -16,18 +16,17 @@ class VistaPage extends React.Component {
     //*/ 
     render(){
     return (
-      <div className={styles.mainDiv}> 
-        {/* vista home page */}
-        <div><VistaHome/></div>
-        {/* vista clockIn page */}
-        <div></div>
-        {/* vista narratives page */}
-        <div></div> 
-        {/* vista schedules page */}
-        <div></div>
-        {/* vista settings page */}
-        <div></div>
-      </div>
+      <Router>
+        {/* <Navbar /> */}
+        <Switch>
+          <Route path='' exact component={VistaHome}/>
+          {/* <Route path='/' exact component={AdminHome}/>
+          <Route path='/users' exact component={Users}/>
+          <Route path='/info' exact component={Info}/>*/}
+          {/* <Route path='/admin' exact component={AdminPage}/> */}
+        </Switch>
+      </Router>
+      
     )
     }
 }

@@ -6,7 +6,7 @@ function Header() {
       <div>
         {/* ****** put logo here ****** */}
         <div className={styles.header}>
-            <h1 className={styles.title}>Welcome to Americorps</h1>
+            <h1 className={styles.title}>AmeriCorps</h1>
         </div>
       </div>
     )
