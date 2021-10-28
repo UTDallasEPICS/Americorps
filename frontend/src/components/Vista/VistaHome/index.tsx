@@ -20,7 +20,7 @@ function VistaHome(){
                     <button><Settings fontSize="large"/> </button>
                     <button ><Narratives fontSize="large"/> </button>
                 </div>
-                <div className="rightContainer">
+                <div className={styles.rightContainer}>
                     <Card/>
                 </div>
             </div>

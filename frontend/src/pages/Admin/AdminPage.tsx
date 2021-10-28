@@ -1,35 +1,27 @@
 //*
 import React from 'react';
-import styles from './AdminPage.module.css';
-//*/
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import AdminHome from '../../components/Admin/AdminHome';
 
 
 // **************************incllude props
-class AdminPage extends React.Component {
-
-    /*
-    0=vista home page
-    1=vista clockIn
-    2=vista narratives
-    3=vista schedule
-    4=vista settings
-    //*/ 
+class VistaPage extends React.Component {
+ 
     render(){
     return (
-      <div className={styles.mainDiv}> 
-        {/* vista home page */}
-        admin
-        {/* vista clockIn page */}
-        <div></div>
-        {/* vista narratives page */}
-        <div></div> 
-        {/* vista schedules page */}
-        <div></div>
-        {/* vista settings page */}
-        <div></div>
-      </div>
+      <Router>
+        {/* <Navbar /> */}
+        <Switch>
+          <Route path='' exact component={AdminHome}/>
+          {/* <Route path='/' exact component={AdminHome}/>
+          <Route path='/users' exact component={Users}/>
+          <Route path='/info' exact component={Info}/>*/}
+          {/* <Route path='/admin' exact component={AdminPage}/> */}
+        </Switch>
+      </Router>
+      
     )
     }
 }
 
-export default AdminPage;
+export default VistaPage;

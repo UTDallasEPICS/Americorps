@@ -15,17 +15,24 @@ import Users from './pages/AdminPage/admin-users-list';
 import HomePage from '../src/pages/Home/HomePage';
 import VistaPage from './pages/Vista/VistaPage';
 import AdminPage from './pages/Admin/AdminPage';
+
+
+/*
+this function sets up the naviation for the different screens
+mainly, this includes:
+
+Home page:  this is where users can log in
+Vista page: allows for navigation to (clock in, schedule, settings, narratives)
+Admin page: 
+
+*/
 function App() {
   return (
     <>
       <Router>
-        {/* <Navbar /> */}
         <Switch>
           <Route path='/' exact component={HomePage}/>
-          {/* <Route path='/' exact component={AdminHome}/>
-          <Route path='/users' exact component={Users}/>
-          <Route path='/info' exact component={Info}/>*/}
-          <Route path='/admin' exact component={AdminPage}/>
+          <Route path='/AdminPage' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
         </Switch>
       </Router>

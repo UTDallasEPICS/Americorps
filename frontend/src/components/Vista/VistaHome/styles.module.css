@@ -1,18 +1,11 @@
-.root{
-    background-color: #00684c;
-    color: whitesmoke;
-    border-radius: 10%;
-}
 .topBar {
     display: flex;
     justify-content: space-around;
     color: white;
 }
-
 .username {
     padding: 20px;
 }
-
 .homeContent {
     height: 970px;
     background-color: transparent;
@@ -21,13 +14,11 @@
     align-items: center;
     color: white;
 }
-
 .grid {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 50px;
 }
-
 button {
     border-radius: 10%;
     color: white;
@@ -35,10 +26,15 @@ button {
     padding: 50px;
     border: none;
 }
-
 .time {
     border-radius: 10%;
     color: white;
     background-color: #FF6B00;
     padding: 50px;
+}
+.main{
+    background-color: tomato;
+}
+.rightContainer{
+    background-color: tomato;
 }
