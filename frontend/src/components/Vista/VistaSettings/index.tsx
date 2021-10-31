@@ -4,6 +4,6 @@ import styles from './styles.module.css'
 
 export default function VistaSettings(){
     return(
-        <div>narr</div>
+        <div className={styles.root}>setting</div>
     );
 }

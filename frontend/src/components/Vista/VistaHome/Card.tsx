@@ -4,31 +4,33 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import styles from './styles.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
     backgroundColor:'transparent',
-    borderRadius:'5%'
+    borderRadius:'5%',
+    color:'white'
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
+    color:'white'
   },
   title: {
     fontSize: 14,
+    color:'white'
   },
   pos: {
     marginBottom: 12,
+    color:'white'
   },
 });
 
 export default function SimpleCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   return (
     <Card className={classes.root}>
       <CardContent>
@@ -54,8 +56,8 @@ export default function SimpleCard() {
           <br />
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
+      <CardActions >
+        <Button className={classes.root} size="small">Learn More</Button>
       </CardActions>
     </Card>
   );
