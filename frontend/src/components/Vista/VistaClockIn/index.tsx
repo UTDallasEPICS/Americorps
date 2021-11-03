@@ -1,14 +1,26 @@
-import React from 'react';
-import styles from './styles.module.css'
+import styles from './styles.module.css';
+import TimeSelector from './timeSelector';
+import Leave from './leave';
+import TextField from './textField';
 
-
-export default class VistaClockIn extends React.Component{
-    render(){
-        return(
-            <div className={styles.root}>
-                <h1>Clock In</h1>
+export default function VistaClockIn (){
+    return(
+        <div className={styles.root} >
+            {/* back button */}
+            <div className={styles.firstDiv}>
+                {/* date selecter and time in/out inputs */}
+                <TimeSelector/>
+                {/* check box for leaves */}
+                <Leave/>
             </div>
-        );
-    };
-    
+            
+            <div>
+                {/* textbox for daily activity field */}
+                <TextField/>
+                {/* submit button */}
+                <button defaultValue="submit" ></button>
+            </div>
+            
+        </div>
+    );
 }

@@ -1,5 +1,18 @@
+/* index.tsx */
 .root{
     background-color: tomato;
     color: white;
     font-size: xx-large;
+    display: flex;
+    margin-top: 30%;
 }
+
+/* timeselctor */
+.timeSelectorDiv{
+    background-color: violet;
+}
+/* leave */
+.leavesDiv{
+    background-color: teal;
+}
+/* textField */

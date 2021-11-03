@@ -24,22 +24,26 @@ this function sets up the naviation for the different screens
 mainly, this includes:
 
 Home page:  this is where users can log in
-Vista page: allows for navigation to (clock in, schedule, settings, narratives)
-Admin page: 
-
+Vista pages: allows for navigation to (clock in, schedule, settings, narratives)
+Admin pages: allows for navigation to (search vistas, search admin, search supervisor)
 */
 function App() {
   return (
     <>
       <Router>
         <Switch>
+          {/* pages */}
           <Route path='/' exact component={HomePage}/>
           <Route path='/AdminPage' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
+
+          {/* Vista components */}
           <Route path='/vistaClockIn' exact component={VistaClockIn}/>
           <Route path='/vistaSchedule' exact component={VistaSchedule}/>
           <Route path='/vistaSettings' exact component={VistaSettings}/>
           <Route path='/vistaNarratives' exact component={VistaNarratives}/>
+
+          
         </Switch>
       </Router>
     </>

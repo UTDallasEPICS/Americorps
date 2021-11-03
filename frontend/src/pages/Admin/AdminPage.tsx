@@ -5,9 +5,7 @@ import AdminHome from '../../components/Admin/AdminHome';
 
 
 // **************************incllude props
-class VistaPage extends React.Component {
- 
-    render(){
+function VistaPage(){
     return (
       <Router>
         {/* <Navbar /> */}
@@ -20,8 +18,7 @@ class VistaPage extends React.Component {
         </Switch>
       </Router>
       
-    )
-    }
+    );
 }
 
 export default VistaPage;

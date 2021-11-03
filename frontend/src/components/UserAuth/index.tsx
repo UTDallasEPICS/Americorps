@@ -2,8 +2,7 @@ import React from 'react';
 import styles from './index.module.css';
 import history from '../../history';
 
-class UserAuth extends React.Component{
-  render(){
+function UserAuth (){
     return (
       <div>
         {/* user log in form */}
@@ -32,6 +31,6 @@ class UserAuth extends React.Component{
         </form>
       </div>
     )
-  };
+  ;
 }
 export default UserAuth;
