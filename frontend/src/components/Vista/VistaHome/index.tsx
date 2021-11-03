@@ -5,11 +5,8 @@ import Settings from '@material-ui/icons/Settings';
 import styles from './styles.module.css';
 import Card from './Card';
 import history from '../../../history';
-import { useState } from 'react';
 
-function handleClick(page: string){
-    
-}
+
 function VistaHome(){
     const [render,setRender]=useState(0);
     return(
@@ -21,6 +18,7 @@ function VistaHome(){
             <hr/>
             <div className={styles.homeContent}>
                 <div className={styles.grid}>
+
                     <button className={styles.time}>
                         <Time className={styles.icons} fontSize="large" onClick={()=>{
                             //handleClick('');

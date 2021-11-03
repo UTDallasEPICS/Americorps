@@ -19,6 +19,7 @@ import VistaClockIn from './components/Vista/VistaClockIn';
 import VistaSettings from './components/Vista/VistaSettings';
 import VistaNarratives from './components/Vista/VistaNarratives';
 import VistaSchedule from './components/Vista/VistaSchedule'; 
+
 /*
 this function sets up the naviation for the different screens
 mainly, this includes:
@@ -37,12 +38,12 @@ function App() {
           <Route path='/AdminPage' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
 
+
           {/* Vista components */}
           <Route path='/vistaClockIn' exact component={VistaClockIn}/>
           <Route path='/vistaSchedule' exact component={VistaSchedule}/>
           <Route path='/vistaSettings' exact component={VistaSettings}/>
           <Route path='/vistaNarratives' exact component={VistaNarratives}/>
-
           
         </Switch>
       </Router>
