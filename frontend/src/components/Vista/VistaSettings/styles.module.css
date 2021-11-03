@@ -1,0 +1,9 @@
+.topBar {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.grid {
+    display : grid;
+}

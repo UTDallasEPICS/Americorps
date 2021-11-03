@@ -4,6 +4,7 @@ import Narratives from '@material-ui/icons/Create';
 import Settings from '@material-ui/icons/Settings';
 import styles from './styles.module.css';
 import Card from './Card';
+import history from '../../../history';
 
 function VistaHome(){
     return(
@@ -16,8 +17,8 @@ function VistaHome(){
             <div className={styles.homeContent}>
                 <div className={styles.grid}>
                     <button className={styles.time}><Time fontSize="large"/> </button>
-                    <button><Schedule fontSize="large"/> </button>
-                    <button><Settings fontSize="large"/> </button>
+                    <button ><Schedule fontSize="large"/> </button>
+                    <button onClick={()=>history.push('/SettingPage')}> <Settings fontSize="large"/> </button>
                     <button ><Narratives fontSize="large"/> </button>
                 </div>
                 <div className={styles.rightContainer}>

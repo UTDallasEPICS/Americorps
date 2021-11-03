@@ -15,7 +15,7 @@ import Users from './pages/AdminPage/admin-users-list';
 import HomePage from '../src/pages/Home/HomePage';
 import VistaPage from './pages/Vista/VistaPage';
 import AdminPage from './pages/Admin/AdminPage';
-
+// import SettingPage from './pages/Vista/SettingPage';
 
 /*
 this function sets up the naviation for the different screens
@@ -34,6 +34,7 @@ function App() {
           <Route path='/' exact component={HomePage}/>
           <Route path='/AdminPage' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
+          <Route path='/VistaPage/Settings' exact component={VistaPage}/>
         </Switch>
       </Router>
     </>

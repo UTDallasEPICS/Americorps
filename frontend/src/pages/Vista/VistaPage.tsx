@@ -3,6 +3,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 //*/
 import VistaHome from '../../components/Vista/VistaHome';
+import VistaSettings from '../../components/Vista/VistaSettings'
 
 // **************************incllude props
 class VistaPage extends React.Component {
@@ -20,6 +21,7 @@ class VistaPage extends React.Component {
         {/* <Navbar /> */}
         <Switch>
           <Route path='' exact component={VistaHome}/>
+          <Route path='' exact component={VistaSettings}/>
           {/* <Route path='/' exact component={AdminHome}/>
           <Route path='/users' exact component={Users}/>
           <Route path='/info' exact component={Info}/>*/}
