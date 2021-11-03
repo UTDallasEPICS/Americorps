@@ -8,7 +8,6 @@ import history from '../../../history';
 
 
 function VistaHome(){
-    const [render,setRender]=useState(0);
     return(
         <div>
             <div className={styles.topBar}>
@@ -21,28 +20,29 @@ function VistaHome(){
 
                     <button className={styles.time}>
                         <Time className={styles.icons} fontSize="large" onClick={()=>{
-                            //handleClick('');
                             history.push('/vistaClockIn');
-                            //add state to render 
-                            setRender(render+1);
+                            window.location.reload(true);
                         }}/>
                     </button>
                     <button>
                         <Schedule className={styles.icons} fontSize="large"
                         onClick={()=>{
-                            handleClick('/vistaClockIn');
+                            history.push('/vistaSchedule');
+                            window.location.reload(true);
                         }}/> 
                     </button>
                     <button>
                         <Settings className={styles.icons} fontSize="large"
                         onClick={()=>{
-                            handleClick('/vistaClockIn');
+                            history.push('/vistaSettings');
+                            window.location.reload(true);
                         }}/> 
                     </button>
                     <button>
                         <Narratives className={styles.icons} fontSize="large"
                         onClick={()=>{
-                            handleClick('/vistaClockIn');
+                            history.push('/vistaNarratives');
+                            window.location.reload(true);
                         }}/> 
                     </button>
                 </div>
