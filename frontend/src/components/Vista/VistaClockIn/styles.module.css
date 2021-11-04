@@ -14,13 +14,17 @@
 }
 /* timeselctor */
 .timeSelectorDiv{
-    background-color: transparent;
+    background-color: tomato;
 }
 .datePicker{
     color: white;
 }
 .pickers{
     color: white;
+}
+.prompts{
+    font-size: medium;
+    font-weight: lighter;
 }
 /* leave */
 .leavesDiv{
