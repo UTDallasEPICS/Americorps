@@ -1,7 +1,7 @@
 /* index.tsx */
 .root{
     color: white;
-    font-size: xx-large;
+    font-size: normal;
     display: flex;
     margin-top: 10%;
     justify-content: center;
@@ -28,7 +28,15 @@
 }
 /* leave */
 .leavesDiv{
-    background-color: teal;
+    background-color: transparent;
+}
+.leaveOps{
+    display: flex;
+    margin: 1%;
+}
+.radioIns{
+    margin: 1.5%;
+    background-color: tomato;
 }
 /* textField */
 .textFieldDiv{
