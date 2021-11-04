@@ -1,18 +1,33 @@
 /* index.tsx */
 .root{
-    background-color: tomato;
     color: white;
     font-size: xx-large;
     display: flex;
-    margin-top: 30%;
+    margin-top: 10%;
+    justify-content: center;
 }
-
+.firstDiv{
+    padding-right: 3%;
+}
+.secondDiv{
+    padding-left: 3%;
+}
 /* timeselctor */
 .timeSelectorDiv{
-    background-color: violet;
+    background-color: transparent;
+}
+.datePicker{
+    color: white;
+}
+.pickers{
+    color: white;
 }
 /* leave */
 .leavesDiv{
     background-color: teal;
 }
 /* textField */
+.textFieldDiv{
+    background-color: aqua;
+    margin-top: 12%;
+}

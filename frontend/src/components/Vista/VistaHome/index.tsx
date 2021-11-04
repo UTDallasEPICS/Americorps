@@ -21,28 +21,28 @@ function VistaHome(){
                     <button className={styles.time}>
                         <Time className={styles.icons} fontSize="large" onClick={()=>{
                             history.push('/vistaClockIn');
-                            window.location.reload(true);
+                            window.location.reload();
                         }}/>
                     </button>
                     <button>
                         <Schedule className={styles.icons} fontSize="large"
                         onClick={()=>{
                             history.push('/vistaSchedule');
-                            window.location.reload(true);
+                            window.location.reload();
                         }}/> 
                     </button>
                     <button>
                         <Settings className={styles.icons} fontSize="large"
                         onClick={()=>{
                             history.push('/vistaSettings');
-                            window.location.reload(true);
+                            window.location.reload();
                         }}/> 
                     </button>
                     <button>
                         <Narratives className={styles.icons} fontSize="large"
                         onClick={()=>{
                             history.push('/vistaNarratives');
-                            window.location.reload(true);
+                            window.location.reload();
                         }}/> 
                     </button>
                 </div>

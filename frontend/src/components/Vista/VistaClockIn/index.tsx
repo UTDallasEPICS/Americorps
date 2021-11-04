@@ -14,7 +14,7 @@ export default function VistaClockIn (){
                 <Leave/>
             </div>
             
-            <div>
+            <div className={styles.secondDiv}>
                 {/* textbox for daily activity field */}
                 <TextField/>
                 {/* submit button */}
