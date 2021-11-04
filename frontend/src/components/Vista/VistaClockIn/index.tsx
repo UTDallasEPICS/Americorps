@@ -18,7 +18,7 @@ export default function VistaClockIn (){
                 {/* textbox for daily activity field */}
                 <TextField/>
                 {/* submit button */}
-                <button defaultValue="submit" ></button>
+                <button className={styles.submitButton} defaultValue="submit" >Submit</button>
             </div>
             
         </div>
