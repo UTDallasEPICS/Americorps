@@ -70,3 +70,7 @@ For example, if there are 3 reports:
 
 Then the supervisor of Group A can view reports from user1 and user2, but not reports from user3.  
 Likewise, the supervisor of Group B can view reports from user3, but not reports from user1 and user2.
+
+## Firebase
+
+- Type 'npm install firebase'
