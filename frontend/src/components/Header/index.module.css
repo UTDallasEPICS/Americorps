@@ -1,0 +1,10 @@
+.header{
+    color: aliceblue;
+    background-color: transparent;
+    padding: .5% 40% .5% 40%;
+    justify-content: center;
+    margin: none;
+}
+.title{
+    text-align: center;
+}
