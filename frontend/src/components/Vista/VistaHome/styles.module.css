@@ -23,18 +23,21 @@ button {
     border-radius: 10%;
     color: white;
     background-color: #132d72;
-    padding: 50px;
+    padding: 20px;
     border: none;
 }
 .time {
     border-radius: 10%;
     color: white;
-    background-color: #FF6B00;
-    padding: 50px;
-}
-.main{
     background-color: tomato;
+    padding: 20px;
 }
 .rightContainer{
-    background-color: tomato;
+    border-radius: 20px;
+    border: 3px solid tomato;
+    background-color: transparent;
 }
+.icons{
+    font-size: xx-large;
+}
+
