@@ -2,14 +2,27 @@ import styles from './styles.module.css'
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
 import { PaletteType } from '@material-ui/core';
-import { useState } from 'react';
 import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
+import { useState } from 'react';
 
-export default function TimeSelector(){
-    const [selectedDate, setSelectedDate] = useState<Date | null>(new Date());
-    const [clockIn, setClockIn] = useState<Date | null>(new Date());
-    const [clockOut, setClockOut] = useState<Date | null>(new Date()); 
+export default function TimeSelector(props:any){ 
+    const setSelectedDate=(date:Date)=>{
+        setDate(date);
+        props.setDate(date);
+    }
+    const setClockIn=(date:Date)=>{
+        setIn(date);
+        props.setIn(date);
+    }
+    const setClockOut=(date:Date)=>{
+        setOut(date);
+        props.setOut(date);
+    }
     
+    //states for dates
+    const [currDate, setDate]= useState<Date | null>(new Date());
+    const [currIn, setIn]= useState<Date | null>(new Date());
+    const [currOut, setOut]= useState<Date | null>(new Date());
     // styles for material ui stuff
     const theme = createTheme({
         palette: {
@@ -34,9 +47,9 @@ export default function TimeSelector(){
                         inputVariant="outlined"
                         color={'primary'}
                         label="select date"
-                        value={selectedDate}
+                        value={currDate}
                         placeholder="10/10/2018"
-                        onChange={date => setSelectedDate(date)}
+                        onChange={date=>setSelectedDate}
                         format="MM/dd/yyyy"
                         style={{color:"#FFFFFF", margin:"2%" }} 
                     />
@@ -48,8 +61,8 @@ export default function TimeSelector(){
                     <KeyboardTimePicker
                         inputVariant="outlined"
                         label="select TIME-IN"
-                        value={clockIn}
-                        onChange={date=>setClockIn(date)}
+                        value={currIn}
+                        onChange={date=>setClockIn}
                         style={{color:"#FFFFFF", margin:"2%" }} 
                         KeyboardButtonProps={{
                             'aria-label':'change date'
@@ -58,8 +71,8 @@ export default function TimeSelector(){
                     <KeyboardTimePicker
                         inputVariant="outlined"
                         label="select TIME-OUT"
-                        value={clockOut}
-                        onChange={date=>setClockOut(date)}
+                        value={currOut}
+                        onChange={date=>setClockOut}
                         style={{color:"#FFFFFF", margin:"2%" }} 
                         KeyboardButtonProps={{
                             'aria-label':'change date'

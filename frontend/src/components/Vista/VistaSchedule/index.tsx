@@ -4,6 +4,8 @@ import styles from './styles.module.css'
 
 export default function VistaSchedule(){
     return(
-        <div className={styles.root}>schedule</div>
+        <div className={styles.root}>
+            
+        </div>
     );
 }

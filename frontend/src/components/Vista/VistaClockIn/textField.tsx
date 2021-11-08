@@ -1,15 +1,17 @@
 import styles from './styles.module.css'
 import MuiTextField from '@mui/material/TextField';
-import { useState } from 'react';
 
-export default function TextField(){
-    const [summary, setSummary] = useState<String>(""); 
-    console.log(summary);
+export default function TextField(props:any){
+    //update summary state in index
+    const handleChange=(event: React.ChangeEvent<HTMLInputElement>)=>{
+        props.setSummary(event.target.value);
+    }
+
     return (
         <div className={styles.textFieldDiv}>
-            {/* <MuiThemeProvider theme={mytheme}> */}
+            {/* cool lookin textfield yuh yuhhhhh */}
                 <MuiTextField
-                id="filled-textarea"
+                id="textArea"
                 placeholder="Enter text here..."
                 variant="filled"
                 multiline
@@ -17,10 +19,8 @@ export default function TextField(){
                 rows={10} 
                 inputProps={{className:styles.textFiledInput}}
                 InputLabelProps={{className:styles.textFiledInput}} 
-                onChange={()=>setSummary("changed")} 
+                onChange={handleChange} 
                 />
-                
-            {/* </MuiThemeProvider> */}
         </div>
     );
 }
