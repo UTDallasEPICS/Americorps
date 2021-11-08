@@ -14,7 +14,7 @@
 }
 
 .homeContent {
-    height: 970px;
+    margin-top: 10%;
     background-color: transparent;
     display: flex;
     justify-content: space-around;
