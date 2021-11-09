@@ -1,0 +1,63 @@
+<<<<<<< Updated upstream
+=======
+/* .root{
+    background-color: tomato;
+} */
+.topBar {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+.container {
+    width: 50%;
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.textDiv{
+    text-align: left;
+    width: auto;
+    height: 30%;
+    margin-top: 3%;
+    color: white;
+}
+
+/* .nameDiv{
+    text-align: center;
+    width: auto;
+    margin-top: 2%;
+    color: white;
+
+}
+.companyEmailDiv{
+    text-align: center;
+    width: auto;
+    margin-top: 2%;
+    color: white;
+}
+.personalEmailDiv{
+    text-align: center;
+    width: auto;
+    margin-top: 2%;
+    color: white;
+}
+.passwordDiv{
+    text-align: center;
+    width: auto;
+    margin-top: 2%;
+    color: white;
+} */
+.textInput{
+    background-color: #132d54;
+    opacity: 60%;
+    color: white;
+    min-width: 100%;
+    min-height: 50%;
+    margin-top: 3%;
+    border: none;
+    padding: 2%;
+    font-size: 150%;
+    text-align: center;
+}
+>>>>>>> Stashed changes

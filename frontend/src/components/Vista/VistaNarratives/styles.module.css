@@ -1,0 +1,29 @@
+<<<<<<< Updated upstream
+=======
+.root{
+    background-color: tomato;
+}
+.topBar {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+.container {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.dateSelector {
+    background-color: transparent;
+    color: white;
+}
+.text {
+    background-color: transparent;
+}
+.submitButton{
+    padding: 3% 8%;
+    margin-top: 10%;
+    background-color: teal;
+    font-size: medium;
+}
+>>>>>>> Stashed changes
