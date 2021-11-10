@@ -29,7 +29,7 @@ function UserAuth (){
                   </div>
                   {/* sign in button */}
                   <div className={styles.buttonDiv}>
-                    <input type="button" value="Sign In" onClick={() => signIn(document.getElementById('email'),document.getElementById('password'))}/>
+                    <input type="button" value="Sign In" onClick={() => signIn((document.getElementById('email') as HTMLInputElement).value,(document.getElementById('password') as HTMLInputElement).value)}/>
                   </div>
               </div>
         </form>
