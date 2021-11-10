@@ -47,7 +47,11 @@
 /* textField */
 .textFieldDiv{
     background-color: transparent;
+<<<<<<< HEAD
     margin-top: 15%;
+=======
+    margin-top: 10%;
+>>>>>>> VistaSettings
     justify-content: left;
     color: white;
 }

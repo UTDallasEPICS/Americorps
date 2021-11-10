@@ -1,5 +1,9 @@
 import styles from './styles.module.css';
 import TimeSelector from './timeSelector';
+<<<<<<< HEAD
+=======
+import DateSelector from './dateSelector';
+>>>>>>> VistaSettings
 import Leave from './leave';
 import TextField from './textField';
 import history from '../../../history';
@@ -28,7 +32,12 @@ export default function VistaClockIn (){
             {/* back button */}
             <div className={styles.firstDiv}>
                 {/* date selecter and time in/out inputs */}
+<<<<<<< HEAD
                 <TimeSelector setSelectedDate={setDate} setClockIn={setIn} setClockOut={setOut}/>
+=======
+                <DateSelector setSelectedDate={setDate}/> 
+                <TimeSelector setClockIn={setIn} setClockOut={setOut}/>
+>>>>>>> VistaSettings
                 {/* check box for leaves */}
                 <Leave setLeaves={setLeave}/>
             </div>
