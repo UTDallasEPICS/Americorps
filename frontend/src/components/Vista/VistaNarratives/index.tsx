@@ -16,12 +16,6 @@ export default function VistaNarratives(){
         history.goBack();
     };
     return(
-<<<<<<< HEAD
-        <div className={styles.root}>narr</div>
-=======
-<<<<<<< Updated upstream
-        <div>narr</div>
-=======
         <div>
             <div className={styles.topBar}>
                 <h1>Narratives</h1>
@@ -41,7 +35,5 @@ export default function VistaNarratives(){
                 </div>
             </div>
         </div>
->>>>>>> Stashed changes
->>>>>>> VistaSettings
     );
 }

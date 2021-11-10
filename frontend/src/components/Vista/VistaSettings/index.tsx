@@ -2,27 +2,12 @@ import React from 'react';
 import styles from './styles.module.css'
 
 
-function VistaSettings(){
+export default function VistaSettings(){
     return(
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-        <div>narr</div>
-=======
->>>>>>> VistaSettings
         <div>
             <div className={styles.topBar}>
                 <h1>Settings</h1>
             </div>
-<<<<<<< HEAD
-            <div className={styles.grid}>
-                <div>Name</div>
-                <div>Company Email</div>
-                <div>Personal Email</div>
-                <div>Password</div>
-            </div>
-        </div>
-=======
             <hr/>
             <div className={styles.container}>
                 <div className={styles.textDiv}>
@@ -49,8 +34,5 @@ function VistaSettings(){
                 </div>
             </div>
         </div>
->>>>>>> Stashed changes
->>>>>>> VistaSettings
     );
 }
- export default VistaSettings;

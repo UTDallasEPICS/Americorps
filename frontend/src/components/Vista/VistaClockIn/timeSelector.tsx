@@ -6,17 +6,10 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { useState } from 'react';
 
 export default function TimeSelector(props:any){ 
-<<<<<<< HEAD
-    const setSelectedDate=(date:Date)=>{
-        setDate(date);
-        props.setDate(date);
-    }
-=======
     // const setSelectedDate=(date:Date)=>{
     //     setDate(date);
     //     props.setDate(date);
     // }
->>>>>>> VistaSettings
     const setClockIn=(date:Date)=>{
         setIn(date);
         props.setIn(date);
@@ -27,11 +20,7 @@ export default function TimeSelector(props:any){
     }
     
     //states for dates
-<<<<<<< HEAD
-    const [currDate, setDate]= useState<Date | null>(new Date());
-=======
     // const [currDate, setDate]= useState<Date | null>(new Date());
->>>>>>> VistaSettings
     const [currIn, setIn]= useState<Date | null>(new Date());
     const [currOut, setOut]= useState<Date | null>(new Date());
     // styles for material ui stuff
@@ -51,15 +40,9 @@ export default function TimeSelector(props:any){
         <MuiThemeProvider theme={theme}>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 {/* prompt */}
-<<<<<<< HEAD
-                    <h1 className={styles.prompts}>Please select a date</h1>
-                {/* date picker */}
-                    <KeyboardDatePicker
-=======
                     {/* <h1 className={styles.prompts}>Please select a date</h1> */}
                 {/* date picker */}
                     {/* <KeyboardDatePicker
->>>>>>> VistaSettings
                         clearable
                         inputVariant="outlined"
                         color={'primary'}
@@ -70,10 +53,7 @@ export default function TimeSelector(props:any){
                         format="MM/dd/yyyy"
                         style={{color:"#FFFFFF", margin:"2%" }} 
                     />
-<<<<<<< HEAD
-=======
                      */}
->>>>>>> VistaSettings
                 {/* prompt */}
                     <h1 className={styles.prompts}>Please select clock in/out times</h1>
 

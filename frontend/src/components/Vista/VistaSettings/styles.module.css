@@ -1,25 +1,11 @@
-<<<<<<< HEAD
-
-.root{
-    background-color: tomato;
-}
-=======
-<<<<<<< Updated upstream
-=======
 /* .root{
     background-color: tomato;
 } */
->>>>>>> VistaSettings
 .topBar {
     display: flex;
     justify-content: space-around;
     color: white;
 }
-<<<<<<< HEAD
-.grid {
-    display : grid;
-}
-=======
 .container {
     width: 50%;
     max-height: 100%;
@@ -30,7 +16,7 @@
 .textDiv{
     text-align: left;
     width: auto;
-    height: 30%;
+    height: 35%;
     margin-top: 3%;
     color: white;
 }
@@ -72,5 +58,3 @@
     font-size: 150%;
     text-align: center;
 }
->>>>>>> Stashed changes
->>>>>>> VistaSettings
