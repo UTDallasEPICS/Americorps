@@ -29,7 +29,7 @@ function UserAuth (){
                   </div>
                   {/* sign in button */}
                   <div className={styles.buttonDiv}>
-                    <button onClick={signIn(document.getElementById('email').value,document.getElementById('Password').value)}>Sign In</button>
+                    <input type="button" value="Sign In" onClick={() => signIn(document.getElementById('email')!,document.getElementById('Password')!)}/>
                   </div>
               </div>
         </form>
@@ -37,6 +37,8 @@ function UserAuth (){
     )
   ;
 }
+
+
 
 const signIn = async(Email:any, Password:any) => {
   const auth = getAuth();
