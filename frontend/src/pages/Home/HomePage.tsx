@@ -11,7 +11,7 @@ function HomePage() {
     var admin=0;
 
     if(!admin){ //if user mode is selected
-
+      
     }else{ //else admin user is selcted
 
     }
@@ -22,5 +22,7 @@ function HomePage() {
       </div>
     )
 }
+
+
 
 export default HomePage;

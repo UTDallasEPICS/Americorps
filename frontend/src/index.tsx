@@ -27,7 +27,7 @@ ReactDOM.render(
 */
 const signInTest = async() => {
   const auth = getAuth();
-signInWithEmailAndPassword(auth, "ssirspamalots@gmail.com", "password")
+signInWithEmailAndPassword(auth, "epicamericorps@gmail.com", "Admin2021")
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
@@ -49,7 +49,7 @@ signInWithEmailAndPassword(auth, "ssirspamalots@gmail.com", "password")
 */
 const createUserTest = async() => {
   const auth = getAuth();
-createUserWithEmailAndPassword(auth, "ssirspamalots@gmail.com", "password")
+createUserWithEmailAndPassword(auth, "TEST@gmail.com", "password")
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
@@ -78,6 +78,7 @@ signOut(auth).then(() => {
   console.log("User failed to sign out");
 });
 }
+
 
 
 //createUserTest()
