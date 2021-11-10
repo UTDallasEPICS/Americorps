@@ -24,12 +24,12 @@ function UserAuth (){
                   <div className={styles.passDiv}>
                     <label>
                       Password
-                      <input className={styles.textInput} type="text" name="Password"/>
+                      <input className={styles.textInput} type="text" name="password"/>
                     </label>
                   </div>
                   {/* sign in button */}
                   <div className={styles.buttonDiv}>
-                    <input type="button" value="Sign In" onClick={() => signIn(document.getElementById('email')!,document.getElementById('Password')!)}/>
+                    <input type="button" value="Sign In" onClick={() => signIn(document.getElementById('email'),document.getElementById('password'))}/>
                   </div>
               </div>
         </form>
@@ -40,15 +40,15 @@ function UserAuth (){
 
 
 
-const signIn = async(Email:any, Password:any) => {
+const signIn = async(email:any, password:any) => {
   const auth = getAuth();
 
-  console.log(Email + " "+ Password)
+  console.log(email + " "+ password)
   
   
 
 
-  signInWithEmailAndPassword(auth, String(Email), String(Password))
+  signInWithEmailAndPassword(auth, String(email), String(password))
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
