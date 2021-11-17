@@ -4,6 +4,7 @@ import history from '../../history';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { sign } from 'crypto';
 import { type } from 'os';
+import { Refresh } from '@material-ui/icons';
 
 function UserAuth (){
 
@@ -53,7 +54,8 @@ const signIn = async(email:any, password:any) => {
     // Signed in 
     const user = userCredential.user;
     console.log("user signed in:" + user);
-    history.push('/VistaPage') 
+    history.push('/VistaPage')
+    window.location.reload()
   })
   .catch((error) => {
     //failure
