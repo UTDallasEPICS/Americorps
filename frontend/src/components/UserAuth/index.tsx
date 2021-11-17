@@ -17,14 +17,14 @@ function UserAuth (){
                   <div className={styles.emailDiv}>
                     <label>
                       Email
-                      <input className={styles.textInput} type="text" name="email"/>
+                      <input className={styles.textInput} type="text" name="email" id="email"/>
                     </label>
                   </div>
                   {/* password div */}
                   <div className={styles.passDiv}>
                     <label>
                       Password
-                      <input className={styles.textInput} type="text" name="password"/>
+                      <input className={styles.textInput} type="text" name="password" id="password"/>
                     </label>
                   </div>
                   {/* sign in button */}
