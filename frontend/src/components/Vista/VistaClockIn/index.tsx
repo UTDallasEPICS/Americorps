@@ -4,6 +4,7 @@ import Leave from './leave';
 import TextField from './textField';
 import history from '../../../history';
 import { useState } from 'react';
+import { getFirestore, collection, doc, setDoc, query, where } from 'firebase/firestore';
 
 export default function VistaClockIn (){
     const [date,setDate]=useState<Date | null>();
@@ -20,6 +21,15 @@ export default function VistaClockIn (){
         console.log("out:"+timeOut?.getTime);
         console.log("emergency:"+ leave);
         console.log("quic summary:"+summary);
+
+        const db = getFirestore();
+        setDoc(doc(doc(db,"users","1"), "clockin", "time2"), {
+            leave: "leave.toString",
+            quicksummary: summary,
+            date: "date",
+            timein: "timeIn",
+            timeout: "timeOut"
+        });
         history.goBack();
     };
  
