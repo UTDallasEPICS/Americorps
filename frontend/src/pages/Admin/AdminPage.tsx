@@ -5,9 +5,7 @@ import AdminHome from '../../components/Admin/AdminHome';
 
 
 // **************************incllude props
-class AdminPage extends React.Component {
- 
-    render(){
+function AdminPage(){
     return (
       <Router>
         {/* <Navbar /> */}
@@ -20,8 +18,7 @@ class AdminPage extends React.Component {
         </Switch>
       </Router>
       
-    )
-    }
+    );
 }
 
 export default AdminPage;

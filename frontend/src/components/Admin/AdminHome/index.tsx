@@ -19,7 +19,7 @@ function AdminHome(props:any){
                     <UserTile className={styles.button} title="Vistas" />
                     <UserTile className={styles.button} title="Admin"/>
                     <UserTile className={styles.button} title="Supervisor"/>
-                    <UserTile className={styles.button} title="Cite"/>
+                    <UserTile className={styles.button} title="Site"/>
                 </div>
             </div>
         </div>

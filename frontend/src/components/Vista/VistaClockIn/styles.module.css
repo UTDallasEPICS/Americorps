@@ -1,0 +1,56 @@
+/* index.tsx */
+.root{
+    color: white;
+    font-size: normal;
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+}
+.submitButton{
+    padding: 3% 8%;
+    margin-top: 10%;
+    background-color: teal;
+    font-size: medium;
+}
+/* timeselctor */
+.timeSelectorDiv{
+    background-color: transparent;
+}
+.datePicker{
+    color: white;
+}
+.pickers{
+    color: white;
+}
+.prompts{
+    font-size: medium;
+    font-weight: lighter;
+    background-color: transparent;
+}
+
+/* leave */
+.leavesDiv{
+    background-color: transparent;
+    opacity: 70%;
+}
+.leaveString{
+    margin: 1%;
+}
+.leaveOps{
+    display: flex;
+    margin: 1%;
+}
+.radioIns{
+    margin: 1%;
+    background-color: tomato;
+}
+/* textField */
+.textFieldDiv{
+    background-color: transparent;
+    margin-top: 15%;
+    justify-content: left;
+    color: white;
+}
+.textFiledInput{
+    color: white !important;
+} 

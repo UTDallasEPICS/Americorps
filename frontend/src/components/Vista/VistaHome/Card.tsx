@@ -10,18 +10,22 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     backgroundColor:'transparent',
-    borderRadius:'5%'
+    borderRadius:'5%',
+    color:'white'
   },
   bullet: {
     display: 'inline-block',
     margin: '0 2px',
     transform: 'scale(0.8)',
+    color:'white'
   },
   title: {
     fontSize: 14,
+    color:'white'
   },
   pos: {
     marginBottom: 12,
+    color:'white'
   },
 });
 
@@ -52,8 +56,8 @@ export default function SimpleCard() {
           <br />
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
+      <CardActions >
+        <Button className={classes.root} size="small">Learn More</Button>
       </CardActions>
     </Card>
   );
