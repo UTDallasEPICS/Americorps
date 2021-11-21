@@ -1,0 +1,11 @@
+.root{
+    float:inline-start;
+    align-self: center;
+}
+.buttons{
+    color: white;
+    text-align: center;
+    padding: auto;
+    margin: 55px;
+    width:200px;
+}

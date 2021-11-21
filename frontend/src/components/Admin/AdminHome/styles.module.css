@@ -1,3 +1,12 @@
 .root{
-    background-color: tomato;
+  color: white;
+}
+.topBar{
+    text-align: center;
+}
+.grid{
+    display: flex;
+    justify-content: center;
+    margin-top: 15%;
+    padding: 0 10;
 }

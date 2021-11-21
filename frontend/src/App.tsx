@@ -24,8 +24,6 @@ Home page:  this is where users can log in
 Vista page: allows for navigation to (clock in, schedule, settings, narratives)
 Admin page: 
 */
-
-import firebase from 'firebase/app';
 import { initializeApp } from "./firebase/app";
 
 // Your web app's Firebase configuration
@@ -51,6 +49,7 @@ function App() {
           <Route path='/' exact component={HomePage}/>
           <Route path='/AdminPage' exact component={AdminPage}/>
           <Route path='/VistaPage' exact component={VistaPage}/> 
+          <Route path='/AdminPage' exact component={AdminPage}/> 
         </Switch>
       </Router>
     </>

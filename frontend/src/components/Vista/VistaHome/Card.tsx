@@ -4,7 +4,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import styles from './styles.module.css';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
@@ -28,7 +27,6 @@ const useStyles = makeStyles({
 
 export default function SimpleCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
   return (
     <Card className={classes.root}>
       <CardContent>

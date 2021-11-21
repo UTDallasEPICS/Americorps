@@ -5,7 +5,7 @@ import AdminHome from '../../components/Admin/AdminHome';
 
 
 // **************************incllude props
-class VistaPage extends React.Component {
+class AdminPage extends React.Component {
  
     render(){
     return (
@@ -24,4 +24,4 @@ class VistaPage extends React.Component {
     }
 }
 
-export default VistaPage;
+export default AdminPage;
