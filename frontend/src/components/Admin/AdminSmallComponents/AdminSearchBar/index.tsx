@@ -7,10 +7,17 @@ props:          name, uid
 Date:           fall 2021
 //*/
 import styles from "./styles.module.css"
-export default function AdminResult(){
+
+export default function AdminSearchBar(){
     return(
     <div className={styles.root}>
-        admin results
+        <form className={styles.form}> 
+            {/* Search text box */}
+            <input className={styles.input} type="text" name="Search"/>
+
+            {/* Search button */}
+            <input className={styles.input} type="submit" />
+        </form>
     </div>
     );
 

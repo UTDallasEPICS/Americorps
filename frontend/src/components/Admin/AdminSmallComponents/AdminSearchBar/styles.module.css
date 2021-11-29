@@ -1,0 +1,12 @@
+.root{
+    display: block;
+    background-color: rebeccapurple;
+    float: left;
+}
+.form{
+    justify-content: center;
+    align-items: center;
+}
+.input{
+    color: black;
+}

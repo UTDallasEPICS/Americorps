@@ -1,5 +1,5 @@
 /*
-AdminHome.tsx
+AdminPage.tsx
 Author:         Front end
 Description:    this class send the website to AdminHome
 props:          none
