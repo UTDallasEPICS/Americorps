@@ -1,4 +1,11 @@
-import React ,{ useState } from 'react';
+/*
+index.tsx, HomeBody
+Author:         Front end
+Description:    this component return the landing page, and user auth 
+props:          none
+Date:           fall 2021
+//*/
+import { useState } from 'react';
 import UserAuth from '../UserAuth/index';
 import styles from './index.module.css';
 import RandRimg from './rick_and_rosie.png';

@@ -1,4 +1,10 @@
-import React from 'react';
+/*
+index.tsx, Header
+Author:         Front end
+Description:    this component returns the header for the landing page
+props:          none
+Date:           fall 2021
+//*/
 import styles from './index.module.css';
 
 function Header() {

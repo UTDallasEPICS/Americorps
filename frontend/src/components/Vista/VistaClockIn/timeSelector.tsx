@@ -1,3 +1,10 @@
+/*
+Card.tsx
+Author:         Front end
+Description:    This component returns the MUI pickers for the dates 
+props:          UID(?)
+Date:           fall 2021 
+//*/
 import styles from './styles.module.css'
 import { MuiPickersUtilsProvider, KeyboardTimePicker, KeyboardDatePicker } from '@material-ui/pickers';
 import DateFnsUtils from '@date-io/date-fns';
@@ -6,6 +13,8 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { useState } from 'react';
 
 export default function TimeSelector(props:any){ 
+
+    //add this stoff to DB 
     const setSelectedDate=(date:Date)=>{
         setDate(date);
         props.setDate(date);

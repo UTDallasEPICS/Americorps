@@ -1,14 +1,16 @@
-//*
-import React from 'react';
+/*
+VistaPage.tsx
+Author:         Front end
+Description:    this class send the website to VistaHome
+props:          none
+Date:           fall 2021
 //*/
 import VistaHome from '../../components/Vista/VistaHome';
 
-function VistaPage () {
+export default function VistaPage () {
   
     return (
       <VistaHome/>
     )
     
 }
-
-export default VistaPage;

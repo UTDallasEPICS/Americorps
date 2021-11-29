@@ -1,3 +1,11 @@
+/*
+index.tsx
+Author:         I dont know
+Description:    this class renders whatever is in "./app.tsx"
+props:          none
+Date:           fall 2021
+ //*/
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';

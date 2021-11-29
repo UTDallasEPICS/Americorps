@@ -1,14 +1,19 @@
+/*
+index.tsx, AdminHome
+Author:         Front end
+Description:    this component returns the action options (UserTiles)
+                to search  vistas||admins||supervisor||site              
+props:          name, uid
+Date:           fall 2021
+//*/
 import styles from './styles.module.css';
 import UserTile from '../AdminSmallComponents/UserOptionTile';
 
-
-/*
-    this component
-*/
 function AdminHome(props:any){
 
     return(
         <div className={styles.root}>
+            {/* quick header */}
             <div className={styles.topBar}>
                 <h1>Americorps</h1>
                 <p className={styles.username}> Welcome {props.name} </p>

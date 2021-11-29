@@ -1,3 +1,12 @@
+/*
+leave.tsx
+Author:         Front end
+Description:    This component returns the options to select a leave option
+                (None, emergency, personal, medical)
+props:          UID(?)
+Date:           fall 2021 
+//*/
+
 import styles from "./styles.module.css"
  
 export default function Leave(props:any){

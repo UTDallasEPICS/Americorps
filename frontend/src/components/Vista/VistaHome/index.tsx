@@ -1,3 +1,11 @@
+/*
+VistaHome.tsx
+Author:         Front end
+Description:    This component allows for the Vista user to choose which action to take 
+                (clock in, settings, schedule, and narratives) 
+props:          UID(?)
+Date:           fall 2021 
+//*/
 import Time from '@material-ui/icons/AccessTime';
 import Schedule from '@material-ui/icons/DateRange';
 import Narratives from '@material-ui/icons/Create';

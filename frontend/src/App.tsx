@@ -1,37 +1,24 @@
 /*
-import React from 'react';
-import Navbar from './components/Navbar';
-*/
+App.tsx
+Author:         Backend, Front end
+Description:    this class sets up the navigation screens and the conigs for Firebase
+props:          none
+Date:           fall 2021
+//*/
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './styles/App.css';
-//import Home from './pages/Home';
-/*
-import Info from './pages/Info';
-import User from './pages/User';
-import AdminHome from './pages/AdminPage/admin-home';
-import Users from './pages/AdminPage/admin-users-list';
-*/
-
 import HomePage from '../src/pages/Home/HomePage';
 import VistaPage from './pages/Vista/VistaPage';
-import AdminPage from './pages/Admin/AdminPage';
 import VistaClockIn from './components/Vista/VistaClockIn';
 import VistaSettings from './components/Vista/VistaSettings';
 import VistaNarratives from './components/Vista/VistaNarratives';
 import VistaSchedule from './components/Vista/VistaSchedule'; 
-
-/*
-this function sets up the naviation for the different screens
-mainly, this includes:
-
-Home page:  this is where users can log in
-Vista pages: allows for navigation to (clock in, schedule, settings, narratives)
-Admin pages: allows for navigation to (search vistas, search admin, search supervisor)
-*/
+import AdminPage from './pages/Admin/AdminPage';
+import AdminResults from './components/Admin/AdminSmallComponents/AdminResults';
+import AdminSearch from './components/Admin/AdminSearch';
 import { initializeApp } from "./firebase/app";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyAv_Q0TIDOXCyOjb0guTSUbgYNC4_QiwZg",
   authDomain: "epcs-americorps.firebaseapp.com",
@@ -42,10 +29,10 @@ const firebaseConfig = {
   appId: "1:639867939960:web:1e510c188fd5e37dc1918d",
   measurementId: "G-ZM76V5BY80"
 };
-
 initializeApp(firebaseConfig);
 
-function App() {
+//begin app function
+export default function App() {
   return (
     <>
       <Router>
@@ -62,11 +49,14 @@ function App() {
           <Route path='/vistaNarratives' exact component={VistaNarratives}/>
           
           {/* Admin components */}
-          
+          <Route path='/adminHome' exact component={AdminPage}/>
+          <Route path='/adminSearch' exact component={AdminSearch}/>
+          <Route path='/adminResults' exact component={AdminResults}/>
+
         </Switch>
       </Router>
     </>
   );
 }
 
-export default App;
+ 

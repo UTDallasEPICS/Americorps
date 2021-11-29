@@ -1,8 +1,13 @@
-import React from 'react';
+/*
+VistaSettings.tsx
+Author:         Front end
+Description:    this component return the vistasettings where the user can update/view their settings
+props:          UID(?)
+Date:           fall 2021
+//*/
 import styles from './styles.module.css'
 
-
-function VistaSettings(){
+export default function VistaSettings(){
     return(
         <div>
             <div className={styles.topBar}>
@@ -17,4 +22,3 @@ function VistaSettings(){
         </div>
     );
 }
- export default VistaSettings;

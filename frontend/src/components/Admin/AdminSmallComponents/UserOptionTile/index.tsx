@@ -1,20 +1,20 @@
+/*
+index.tsx, UserTile
+Author:         Front end
+Description:    this component returns the action options (UserTiles)
+                to search  vistas||admins||supervisor||site              
+props:          name, uid
+Date:           fall 2021
+//*/
 import styles from "./style.module.css";
 import history from "../../../../history";
-/*
-    this component
-*/
+
 function UserTile(props:any){
 
     const setNextScreen=()=>{
         let title=props.title;
-        if(title=="Vistas"){
-        }else if(title=="Admin"){
 
-        }else if(title=="Supervisor"){
-
-        }else{
-
-        }
+        // history.push(path);
     };
     return(
         <div className={styles.root}>

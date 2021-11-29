@@ -1,10 +1,17 @@
-import React from 'react';
+/*
+Card.tsx
+Author:         Front end
+Description:    This component is a quick overview of the user profile 
+props:          UID(?)
+Date:           fall 2021 
+//*/
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+
 
 const useStyles = makeStyles({
   root: {

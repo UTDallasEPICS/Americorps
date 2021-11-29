@@ -1,24 +1,17 @@
-//*
-import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+/*
+AdminHome.tsx
+Author:         Front end
+Description:    this class send the website to AdminHome
+props:          none
+Date:           fall 2021
+//*/
 import AdminHome from '../../components/Admin/AdminHome';
 
 
 // **************************incllude props
-function AdminPage(){
+export default function AdminPage(){
     return (
-      <Router>
-        {/* <Navbar /> */}
-        <Switch>
-          <Route path='' exact component={AdminHome}/>
-          {/* <Route path='/' exact component={AdminHome}/>
-          <Route path='/users' exact component={Users}/>
-          <Route path='/info' exact component={Info}/>*/}
-          {/* <Route path='/admin' exact component={AdminPage}/> */}
-        </Switch>
-      </Router>
-      
+      <AdminHome/>
     );
 }
 
-export default AdminPage;
