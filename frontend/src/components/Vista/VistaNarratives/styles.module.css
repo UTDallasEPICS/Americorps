@@ -1,9 +1,6 @@
 .root{
     background-color: tomato;
 }
-.root{
-    background-color: tomato;
-}
 .topBar {
     display: flex;
     justify-content: space-around;

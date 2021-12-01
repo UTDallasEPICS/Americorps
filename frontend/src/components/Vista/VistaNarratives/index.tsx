@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import TextField from '../VistaClockIn/textField';
-import DateSelector from '../VistaClockIn/dateSelector';
+// import TextField from '../VistaClockIn/textField';
+// import DateSelector from '../VistaClockIn/dateSelector';
 import history from '../../../history';
 import styles from './styles.module.css'
+
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
+import DateFnsUtils from '@date-io/date-fns';
+import { PaletteType } from '@material-ui/core';
+import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 
 
 export default function VistaNarratives(){
