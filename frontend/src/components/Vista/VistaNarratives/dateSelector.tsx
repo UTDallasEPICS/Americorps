@@ -6,7 +6,7 @@ import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 import { useState } from 'react';
 
 export default function DateSelector(props:any){ 
-    const setSelectedDate=(date:Date)=>{
+    const setSelectedDate=(date:any)=>{
         setDate(date);
         props.setDate(date);
     }
@@ -39,7 +39,7 @@ export default function DateSelector(props:any){
                         label="select date"
                         value={currDate}
                         placeholder="10/10/2018"
-                        onChange={date=>setSelectedDate}
+                        onChange={setSelectedDate}
                         format="MM/dd/yyyy"
                         style={{color:"#FFFFFF", margin:"2%" }} 
                     />
