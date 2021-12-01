@@ -17,19 +17,19 @@ export default function VistaSettings(){
                 <div className={styles.textDiv}>
                     <label>
                     Company Email
-                    <input className={styles.textInput} type="text" name="companyEmail"/>
+                    <input className={styles.textInput} type="email" name="companyEmail"/>
                     </label>
                 </div>
                 <div className={styles.textDiv}>
                     <label>
                     Personal Email
-                    <input className={styles.textInput} type="text" name="personalEmail"/>
+                    <input className={styles.textInput} type="email" name="personalEmail"/>
                     </label>
                 </div>
                 <div className={styles.textDiv}>
                     <label>
                     Password
-                    <input className={styles.textInput} type="text" name="password"/>
+                    <input className={styles.textInput} type="password" name="password"/>
                     </label>
                 </div>
             </div>
