@@ -1,6 +1,3 @@
-.root{
-    background-color: tomato;
-}
 .topBar {
     display: flex;
     justify-content: space-around;
@@ -14,13 +11,48 @@
 .dateSelector {
     background-color: transparent;
     color: white;
+    display: flex;
+    justify-content: space-around;
 }
 .text {
     background-color: transparent;
+    display: flex;
+    justify-content: space-around;
+}
+.submit{
+    background-color: transparent;
+    display: flex;
+    justify-content: space-around;
 }
 .submitButton{
     padding: 3% 8%;
     margin-top: 10%;
     background-color: teal;
     font-size: medium;
+    place-items: right;
 }
+/* timeselctor */
+.dateSelectorDiv{
+    background-color: transparent;
+}
+.datePicker{
+    color: white;
+}
+.pickers{
+    color: white;
+}
+.prompts{
+    font-size: medium;
+    font-weight: lighter;
+    background-color: transparent;
+}
+/* textField */
+.textFieldDiv{
+    background-color: transparent;
+    margin-top: 10%;
+    justify-content: left;
+    color: white;
+}
+.textFiledInput{
+    color: white !important;
+} 

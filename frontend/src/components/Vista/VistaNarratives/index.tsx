@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
-// import TextField from '../VistaClockIn/textField';
-// import DateSelector from '../VistaClockIn/dateSelector';
+import { useState } from 'react';
+import TextField from './textField';
+import DateSelector from './dateSelector';
 import history from '../../../history';
 import styles from './styles.module.css'
-
-import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
-import DateFnsUtils from '@date-io/date-fns';
-import { PaletteType } from '@material-ui/core';
-import { MuiThemeProvider, createTheme } from '@material-ui/core/styles';
 
 
 export default function VistaNarratives(){
@@ -17,7 +12,7 @@ export default function VistaNarratives(){
     const handleSubmit=()=>{
         alert("Entry Submitted");
         console.log("date: "+date?.getDate);
-        console.log("quic summary:"+summary);
+        console.log("quick summary:"+summary);
         history.goBack();
     };
     return(
@@ -35,6 +30,8 @@ export default function VistaNarratives(){
                 <div className={styles.text}>
                     {/* textbox for daily activity field */}
                     <TextField setSummary={setSummary}/>
+                </div>
+                <div className={styles.submit}>
                     {/* submit button */}
                     <button className={styles.submitButton} onClick={()=>{handleSubmit()}}>Submit</button>
                 </div>
