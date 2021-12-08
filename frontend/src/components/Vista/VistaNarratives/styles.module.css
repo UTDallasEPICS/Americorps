@@ -17,7 +17,7 @@
 .text {
     background-color: transparent;
     display: flex;
-    justify-content: space-around;
+    /* justify-content: space-around; */
 }
 .submit{
     background-color: transparent;
@@ -50,8 +50,9 @@
 .textFieldDiv{
     background-color: transparent;
     margin-top: 10%;
-    justify-content: left;
+    /* justify-content: left; */
     color: white;
+    width: 100%;
 }
 .textFiledInput{
     color: white !important;

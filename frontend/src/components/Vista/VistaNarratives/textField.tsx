@@ -20,6 +20,7 @@ export default function TextField(props:any){
                 inputProps={{className:styles.textFiledInput}}
                 InputLabelProps={{className:styles.textFiledInput}} 
                 onChange={handleChange} 
+                fullWidth
                 />
         </div>
     );
