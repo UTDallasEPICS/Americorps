@@ -16,7 +16,7 @@
 }
 .grid {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 40% 50%;
     gap: 50px;
 }
 button {
@@ -34,7 +34,6 @@ button {
 }
 .rightContainer{
     border-radius: 20px;
-    border: 3px solid tomato;
     background-color: transparent;
 }
 .icons{
